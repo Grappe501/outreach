@@ -90,9 +90,8 @@
 
 .explore-group-label {
   margin: 0 0 0.35rem;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: var(--text-label);
+  letter-spacing: var(--tracking-label);
   color: var(--ink-muted);
   font-weight: 700;
 }
@@ -206,8 +205,7 @@ body.palette-open {
   grid-area: group;
   align-self: center;
   font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: var(--tracking-label);
   color: var(--ink-muted);
   font-weight: 700;
 }

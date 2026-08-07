@@ -1,4 +1,5 @@
 :root {
+  /* Color */
   --ink: #020a08;
   --ink-soft: #0c1c18;
   --ink-muted: #243832;
@@ -15,17 +16,57 @@
   --line: rgba(2, 10, 8, 0.16);
   --line-strong: rgba(2, 10, 8, 0.26);
   --shadow: 0 24px 60px rgba(2, 10, 8, 0.14);
+  --shadow-soft: 0 10px 28px rgba(6, 20, 17, 0.06);
+  --text-on-dark: #f7faf8;
+  --text-on-dark-soft: #dce8e3;
+  --accent-on-dark: #ffc89a;
+
+  /* Shape */
   --radius: 2px;
+  --radius-control: 3px;
+
+  /* Type — optical sizes */
   --font-display: "Bricolage Grotesque", system-ui, sans-serif;
   --font-body: "Source Sans 3", system-ui, sans-serif;
+  --text-display: clamp(2.55rem, 6.4vw, 4.35rem);
+  --text-title: clamp(1.85rem, 3.6vw, 2.65rem);
+  --text-heading: clamp(1.35rem, 2.2vw, 1.65rem);
+  --text-lead: clamp(1.12rem, 1.6vw, 1.28rem);
+  --text-body: 1.125rem;
+  --text-small: 0.95rem;
+  --text-label: 0.8125rem;
+  --leading-display: 1.08;
+  --leading-body: 1.65;
+  --tracking-display: -0.028em;
+  --tracking-title: -0.02em;
+  --tracking-label: 0.02em;
+
+  /* Layout */
   --max: 62rem;
   --narrow: 40rem;
   --gutter: clamp(1.25rem, 4.5vw, 3rem);
   --page-inset: 0px;
   --header-h: 4.35rem;
-  --text-on-dark: #f7faf8;
-  --text-on-dark-soft: #dce8e3;
-  --accent-on-dark: #ffc89a;
+  --section-y: clamp(3.25rem, 7.5vw, 5.75rem);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --safe-top: env(safe-area-inset-top, 0px);
+
+  /* Component scale */
+  --btn-font: 1rem;
+  --btn-pad-y: 0.85rem;
+  --btn-pad-x: 1.25rem;
+  --btn-border: 1.5px;
+  --card-pad: 1.35rem 1.25rem;
+  --card-border: 1px solid var(--line-strong);
+  --card-accent: 3px solid var(--teal);
+  --table-pad-y: 0.85rem;
+  --table-pad-x: 1rem;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+  --dur-fast: 180ms;
+  --dur-med: 480ms;
+  --dur-slow: 780ms;
+  --reveal-distance: 1.15rem;
 }

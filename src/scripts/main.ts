@@ -59,10 +59,19 @@ function initReveals() {
   }
 
   const revealTargets = document.querySelectorAll(
-    '.section h2, .callout, .pull-quote, .tier, .math-block, .price-hero, .join-form, .better-list li, .offer-item, .rate-table-wrap, .coop-aside, .product-figure, .feature-blocks, .topic-card, .stat-block, .drill-card, .taxonomy-card, .policy-callout, .exec-panel',
+    '.section h2, .section-cinema h2, .callout, .pull-quote, .tier, .math-block, .price-hero, .join-form, .better-list li, .problem-list li, .offer-item, .rate-table-wrap, .coop-aside, .product-figure, .feature-blocks, .topic-card, .stat-block, .drill-card, .taxonomy-card, .policy-callout, .exec-panel, .flow-step, .cinema-points li, .steps li, .partner-band',
   );
-  revealTargets.forEach((el) => {
+  revealTargets.forEach((node, index) => {
+    const el = node as HTMLElement;
     if (!el.classList.contains('reveal')) el.classList.add('reveal');
+    const parent = el.parentElement;
+    if (parent?.classList.contains('stagger') && !el.style.getPropertyValue('--stagger')) {
+      const siblings = [...parent.children].filter((child) =>
+        child.classList.contains('reveal') || child === el,
+      ) as HTMLElement[];
+      const pos = siblings.indexOf(el);
+      el.style.setProperty('--stagger', String(pos >= 0 ? pos : index % 8));
+    }
   });
 
   if ('IntersectionObserver' in window) {

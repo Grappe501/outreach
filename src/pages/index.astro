@@ -3,94 +3,176 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import PartnerImage from '@/components/PartnerImage.astro';
 ---
 
-<BaseLayout title="Arkansas Campaign Data Cooperative — Institutional Campaign Infrastructure" description="Executive-grade Arkansas campaign infrastructure: Electd operating system, L2 enhanced voter intelligence, cooperative data acquisition, and managed outreach.">
-<section class="hero">
-      <div class="hero-visual" aria-hidden="true">
-        <div class="hero-gradient"></div>
-        <div class="hero-grid"></div>
+<BaseLayout
+  title="Arkansas Campaign Data Cooperative — Institutional Campaign Infrastructure"
+  description="Executive-grade Arkansas campaign infrastructure: Electd operating system, L2 enhanced voter intelligence, cooperative data acquisition, and managed outreach."
+  ogImage="/og/home.png"
+>
+  <section class="hero">
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-gradient"></div>
+      <div class="hero-grid"></div>
+    </div>
+    <div class="hero-content">
+      <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Statewide campaign infrastructure</p>
+      <div class="hero-brand">
+        <img
+          class="hero-map"
+          src="/assets/arkansas-logo.svg"
+          width="220"
+          height="200"
+          alt="Outline map of Arkansas with town markers"
+        />
+        <div>
+          <p class="brand-lockup">Arkansas Campaign Data Cooperative</p>
+          <h1 transition:name="page-title">Better Data.<br />Better Organizing.<br />Better Campaigns.</h1>
+        </div>
       </div>
-      <div class="hero-content">
-        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Statewide campaign infrastructure</p>
-        <div class="hero-brand">
-          <img class="hero-map" src="/assets/arkansas-logo.svg" width="220" height="200" alt="Outline map of Arkansas with town markers" />
-          <div>
-            <p class="brand-lockup">Arkansas Campaign Data Cooperative</p>
-            <h1 transition:name="page-title">Better Data.<br />Better Organizing.<br />Better Campaigns.</h1>
+      <p class="hero-lede">
+        An institutional stack for serious Arkansas campaigns:
+        <a href="https://www.electd.io/" rel="noopener noreferrer" target="_blank">Electd</a> for execution,
+        <a href="https://l2-data.com/" rel="noopener noreferrer" target="_blank">L2</a> for enhanced voter
+        intelligence, managed outreach when you need capacity—and private campaign relationships kept firewalled.
+      </p>
+      <div class="cta-row home-hero-actions">
+        <a class="btn btn-primary" href="/join/">Request a briefing</a>
+        <a class="btn btn-secondary" href="/data/">Inspect the data architecture</a>
+        <a class="btn btn-ghost" href="/cooperative/">Cooperative terms</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-cinema section-cinema-dark">
+    <div class="section-inner">
+      <div class="cinema-split">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> The organizing tax</p>
+          <h2>Incomplete phones and emails slow every door, dial, and donation ask.</h2>
+          <p class="lead">
+            VAN and spreadsheets only work as well as the records behind them. Missing mobiles, broken addresses, and
+            disconnected contacts are a quiet cost on every Arkansas race.
+          </p>
+          <div class="cta-row" style="margin-top:1.5rem">
+            <a class="btn btn-primary" href="/problem/">Read the problem brief</a>
+            <a class="btn btn-outline" href="/van/">How this works with VAN</a>
           </div>
         </div>
-        <p class="hero-lede">An institutional stack for serious Arkansas campaigns: <a href="https://www.electd.io/" rel="noopener noreferrer" target="_blank">Electd</a> for execution, <a href="https://l2-data.com/" rel="noopener noreferrer" target="_blank">L2</a> for enhanced voter intelligence, managed outreach when you need capacity—and private campaign relationships kept firewalled.</p>
-        <div class="cta-row home-hero-actions">
-          <a class="btn btn-primary" href="/join/">Request a briefing</a>
-          <a class="btn btn-secondary" href="/data/">Inspect the data architecture</a>
-          <a class="btn btn-ghost" href="/cooperative/">Cooperative terms</a>
-        </div>
+        <ul class="cinema-points stagger">
+          <li>Outdated landlines instead of reachable mobiles</li>
+          <li>Thin email coverage for digital programs</li>
+          <li>Mailing addresses that bounce or waste postage</li>
+          <li>Local knowledge trapped outside the voter file</li>
+        </ul>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section offer-strip">
-      <div class="section-inner">
-        <h2 >Operating capabilities</h2>
-        <p class="lead">Each capability has its own page—built for decision-makers who need depth, not a brochure scroll.</p>
-        <div class="topic-grid">
-          <a class="topic-card accent" href="/platform/">
-            <h3>Electd Platform</h3>
-            <p>$149/month, no contract. Political OS: lists, CRM, canvassing, phones, email, SMS, voice, mail.</p>
-            <span class="topic-go">Platform brief →</span>
-          </a>
-          <a class="topic-card accent" href="/data/">
-            <h3>L2 Data Architecture</h3>
-            <p>Identity, contact, districts, wealth, donors, automotive, digital IDs—plus HaystaqDNA models.</p>
-            <span class="topic-go">Data brief →</span>
-          </a>
-          <a class="topic-card" href="/models/">
-            <h3>HaystaqDNA Models</h3>
-            <p>160+ issue, behavior, candidate, and turnout scores (0–100) for precision targeting.</p>
-            <span class="topic-go">Models brief →</span>
-          </a>
-          <a class="topic-card" href="/cooperative/">
-            <h3>Data Cooperative</h3>
-            <p>Published figures are <strong>minimum</strong> contributions. Metro areas 50,000+ pay county rate.</p>
-            <span class="topic-go">Terms →</span>
-          </a>
-          <a class="topic-card" href="/managed/">
-            <h3>Managed Outreach</h3>
-            <p>Full-service email 1.5¢ · SMS 2.8¢—executed on Electd.</p>
-            <span class="topic-go">Managed →</span>
-          </a>
-          <a class="topic-card" href="/pricing/">
-            <h3>Rate Card</h3>
-            <p>Quoted Electd usage vs managed full-service, side by side.</p>
-            <span class="topic-go">Rates →</span>
-          </a>
-        </div>
+  <section class="section-cinema section-cinema-light">
+    <div class="section-inner">
+      <p class="kicker">Problem → stack → execution</p>
+      <h2>One Arkansas path from data to doors to digital.</h2>
+      <p class="lead">
+        Electd runs the campaign OS. L2 enhances the file when the cooperative funds. Managed service fills capacity
+        gaps. Private contacts stay firewalled.
+      </p>
+      <div class="flow-rail stagger">
+        <article class="flow-step">
+          <span class="step-num">01 — Platform</span>
+          <h3>Electd at $149/mo</h3>
+          <p>Lists, CRM, canvass, phones, email, SMS, voice, mail—no contract.</p>
+        </article>
+        <article class="flow-step">
+          <span class="step-num">02 — Data</span>
+          <h3>L2 cooperative file</h3>
+          <p>Enhanced contacts and HaystaqDNA models, funded by published minimums.</p>
+        </article>
+        <article class="flow-step">
+          <span class="step-num">03 — Capacity</span>
+          <h3>Managed outreach</h3>
+          <p>Full-service email and SMS when your team needs execution support.</p>
+        </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section section-product">
-      <div class="section-inner">
-        <h2 >Institutional partners</h2>
-        <p class="lead">We package Arkansas organizing requirements with category-leading national infrastructure—and link you to the source for complete product documentation.</p>
-        <div class="partner-band">
-          <PartnerImage variant="electd-mark" loading="lazy" />
-          <p><strong>Electd</strong> — political operating system for strategy, CRM, and multi-channel outreach. <a href="https://www.electd.io/" rel="noopener noreferrer" target="_blank">electd.io</a> · <a href="/platform/">Our brief</a></p>
-        </div>
-        <div class="partner-band">
-          <PartnerImage variant="l2-logo" loading="lazy" />
-          <p><strong>L2 Data</strong> — 50+ years of enhanced voter &amp; consumer intelligence. <a href="https://l2-data.com/" rel="noopener noreferrer" target="_blank">l2-data.com</a> · <a href="/data/">Our brief</a> · <a href="/assets/L2-Voter-Data-Dictionary.pdf">Data dictionary (PDF)</a></p>
-        </div>
-        <div class="exec-panel">
-          <h3>For campaigns that can invest more</h3>
-          <p>Cooperative contribution amounts are the <strong>minimum</strong> required to keep statewide acquisition affordable for the broadest set of participants. If your campaign can contribute above the minimum, please do—additional support strengthens the file for everyone.</p>
-          <p><a href="/cooperative/#minimums">Read contribution policy →</a></p>
-        </div>
-        <div class="source-links">
-          <a class="btn btn-outline" href="/problem/">The problem</a>
-          <a class="btn btn-outline" href="/how-it-works/">How it works</a>
-          <a class="btn btn-outline" href="/privacy/">Private contacts</a>
-          <a class="btn btn-primary" href="/join/">Request a briefing</a>
-        </div>
+  <section class="section offer-strip">
+    <div class="section-inner">
+      <h2>Operating capabilities</h2>
+      <p class="lead">Each capability has its own page—built for decision-makers who need depth, not a brochure scroll.</p>
+      <div class="topic-grid stagger">
+        <a class="topic-card accent" href="/platform/">
+          <h3>Electd Platform</h3>
+          <p>$149/month, no contract. Political OS: lists, CRM, canvassing, phones, email, SMS, voice, mail.</p>
+          <span class="topic-go">Platform brief →</span>
+        </a>
+        <a class="topic-card accent" href="/data/">
+          <h3>L2 Data Architecture</h3>
+          <p>Identity, contact, districts, wealth, donors, automotive, digital IDs—plus HaystaqDNA models.</p>
+          <span class="topic-go">Data brief →</span>
+        </a>
+        <a class="topic-card" href="/models/">
+          <h3>HaystaqDNA Models</h3>
+          <p>160+ issue, behavior, candidate, and turnout scores (0–100) for precision targeting.</p>
+          <span class="topic-go">Models brief →</span>
+        </a>
+        <a class="topic-card" href="/cooperative/">
+          <h3>Data Cooperative</h3>
+          <p>Published figures are <strong>minimum</strong> contributions. Metro areas 50,000+ pay county rate.</p>
+          <span class="topic-go">Terms →</span>
+        </a>
+        <a class="topic-card" href="/managed/">
+          <h3>Managed Outreach</h3>
+          <p>Full-service email 1.5¢ · SMS 2.8¢—executed on Electd.</p>
+          <span class="topic-go">Managed →</span>
+        </a>
+        <a class="topic-card" href="/pricing/">
+          <h3>Rate Card</h3>
+          <p>Quoted Electd usage vs managed full-service, side by side.</p>
+          <span class="topic-go">Rates →</span>
+        </a>
       </div>
-    </section>
+    </div>
+  </section>
 
+  <section class="section section-product">
+    <div class="section-inner">
+      <h2>Institutional partners</h2>
+      <p class="lead">
+        We package Arkansas organizing requirements with category-leading national infrastructure—and link you to the
+        source for complete product documentation.
+      </p>
+      <div class="partner-band">
+        <PartnerImage variant="electd-mark" loading="lazy" />
+        <p>
+          <strong>Electd</strong> — political operating system for strategy, CRM, and multi-channel outreach.
+          <a href="https://www.electd.io/" rel="noopener noreferrer" target="_blank">electd.io</a> ·
+          <a href="/platform/">Our brief</a>
+        </p>
+      </div>
+      <div class="partner-band">
+        <PartnerImage variant="l2-logo" loading="lazy" />
+        <p>
+          <strong>L2 Data</strong> — 50+ years of enhanced voter &amp; consumer intelligence.
+          <a href="https://l2-data.com/" rel="noopener noreferrer" target="_blank">l2-data.com</a> ·
+          <a href="/data/">Our brief</a> ·
+          <a href="/assets/L2-Voter-Data-Dictionary.pdf">Data dictionary (PDF)</a>
+        </p>
+      </div>
+      <div class="exec-panel">
+        <h3>For campaigns that can invest more</h3>
+        <p>
+          Cooperative contribution amounts are the <strong>minimum</strong> required to keep statewide acquisition
+          affordable for the broadest set of participants. If your campaign can contribute above the minimum, please
+          do—additional support strengthens the file for everyone.
+        </p>
+        <p><a href="/cooperative/#minimums">Read contribution policy →</a></p>
+      </div>
+      <div class="source-links">
+        <a class="btn btn-outline" href="/problem/">The problem</a>
+        <a class="btn btn-outline" href="/how-it-works/">How it works</a>
+        <a class="btn btn-outline" href="/privacy/">Private contacts</a>
+        <a class="btn btn-primary" href="/join/">Request a briefing</a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
-

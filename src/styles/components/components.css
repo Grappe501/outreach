@@ -1,0 +1,199 @@
+/* Unified component language — buttons, cards, tables */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--btn-font);
+  line-height: 1.2;
+  padding: var(--btn-pad-y) var(--btn-pad-x);
+  border-radius: var(--radius-control);
+  border: var(--btn-border) solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform var(--dur-fast) var(--ease-soft),
+    background var(--dur-fast) ease,
+    color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease,
+    box-shadow var(--dur-fast) ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--copper);
+  outline-offset: 3px;
+}
+
+.btn-primary {
+  background: var(--copper);
+  color: #fff;
+  box-shadow: 0 10px 28px rgba(184, 72, 12, 0.32);
+}
+
+.btn-primary:hover {
+  background: var(--copper-deep);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.45);
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
+}
+
+.btn-ghost:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+.btn-outline {
+  background: var(--surface);
+  border-color: var(--teal);
+  color: var(--teal);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-outline:hover {
+  background: var(--teal);
+  color: #fff;
+  border-color: var(--teal);
+}
+
+.btn-wide {
+  width: 100%;
+  max-width: 20rem;
+}
+
+/* Shared card language */
+.surface-card,
+.topic-card,
+.tier,
+.drill-card,
+.taxonomy-card,
+.stat-block,
+.exec-panel,
+.partner-band,
+.feature-blocks article,
+.coop-aside {
+  background: var(--surface);
+  border: var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+.topic-card,
+.tier,
+.drill-card,
+.taxonomy-card,
+.stat-block,
+.feature-blocks article {
+  padding: var(--card-pad);
+}
+
+.topic-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  border-top: var(--card-accent);
+  text-decoration: none;
+  color: inherit;
+  min-height: 11rem;
+}
+
+.topic-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--copper);
+  border-top-color: var(--copper);
+  box-shadow: var(--shadow);
+  color: inherit;
+}
+
+.topic-card h3 {
+  margin: 0;
+  color: var(--teal);
+  font-size: var(--text-heading);
+  letter-spacing: var(--tracking-title);
+}
+
+.topic-card p {
+  margin: 0;
+  flex: 1;
+  color: var(--ink-soft);
+  font-size: var(--text-small);
+}
+
+.topic-card .topic-go {
+  font-weight: 800;
+  color: var(--copper);
+  font-size: var(--text-small);
+}
+
+.topic-card.accent {
+  border-top-color: var(--copper);
+  background: var(--cream);
+}
+
+/* Tables */
+.rate-table-wrap {
+  overflow-x: auto;
+  border: var(--card-border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.rate-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-small);
+}
+
+.rate-table th,
+.rate-table td {
+  padding: var(--table-pad-y) var(--table-pad-x);
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.rate-table thead th {
+  background: var(--teal);
+  color: var(--text-on-dark);
+  font-weight: 700;
+  font-size: var(--text-label);
+  letter-spacing: var(--tracking-label);
+}
+
+.rate-table tbody th {
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.rate-table .rate-num {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: var(--teal);
+}
+
+.rate-table .rate-na {
+  color: var(--ink-muted);
+}

@@ -37,7 +37,14 @@ npm run build   # astro check && astro build
 npm run preview
 ```
 
-## Performance budget
+## Visual system
+
+- Motion: staggered scroll reveals, hero rise, reduced-motion safe
+- Type: optical size tokens, fewer all-caps labels
+- Components: shared button / card / table language via CSS tokens
+- Cinema sections: dark↔light problem → solution choreography
+- Social: `/public/og/*.png` branded cards (regenerate with `npm run og`)
+
 
 Targets (mobile Lighthouse on production): Performance / A11y / Best Practices / SEO ≥ 95; LCP &lt; 2.5s; CLS &lt; 0.1; INP &lt; 200ms.
 

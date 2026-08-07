@@ -58,25 +58,28 @@ a:hover {
 
 h1, h2, h3 {
   font-family: var(--font-display);
-  line-height: 1.12;
-  letter-spacing: -0.025em;
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
   font-weight: 800;
   color: var(--ink);
+  text-wrap: balance;
 }
 
 h1 {
-  font-size: clamp(2.75rem, 7.2vw, 4.75rem);
+  font-size: var(--text-display);
   margin: 0.3em 0 0.4em;
 }
 
 h2 {
-  font-size: clamp(1.9rem, 4.2vw, 2.85rem);
+  font-size: var(--text-title);
+  letter-spacing: var(--tracking-title);
   margin: 0 0 0.7em;
   color: var(--teal);
 }
 
 h3 {
-  font-size: 1.28rem;
+  font-size: var(--text-heading);
+  letter-spacing: var(--tracking-title);
   margin: 1.6em 0 0.55em;
   color: var(--ink);
   font-weight: 700;
@@ -85,6 +88,8 @@ h3 {
 p {
   margin: 0 0 1em;
   color: var(--ink-soft);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
 }
 
 strong {

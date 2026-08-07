@@ -1,4 +1,7 @@
 @import './tokens.css';
 @import './base.css';
 @import './components/site.css';
+@import './components/components.css';
+@import './components/motion.css';
+@import './components/cinema.css';
 @import './components/chrome.css';
