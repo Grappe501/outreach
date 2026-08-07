@@ -1,0 +1,17 @@
+---
+import { moreLinks } from '@/data/nav';
+
+const items = [
+  ...moreLinks,
+  { href: '/data/#dictionary', label: 'Field dictionary' },
+  { href: '/cooperative/#minimums', label: 'Contribution minimums' },
+  { href: '/pricing/', label: 'Rates' },
+];
+---
+
+<div class="subnav">
+  <div class="subnav-inner">
+    <span class="subnav-label">More</span>
+    {items.map((l) => <a href={l.href}>{l.label}</a>)}
+  </div>
+</div>

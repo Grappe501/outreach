@@ -1,0 +1,131 @@
+export type PaletteItem = {
+  id: string;
+  title: string;
+  description: string;
+  href: string;
+  keywords: string[];
+  group: string;
+};
+
+export const navIndex: PaletteItem[] = [
+  {
+    id: 'home',
+    title: 'Home',
+    description: 'Arkansas Campaign Data Cooperative overview',
+    href: '/',
+    keywords: ['home', 'start', 'overview'],
+    group: 'Pages',
+  },
+  {
+    id: 'rates',
+    title: 'Rates',
+    description: 'Electd usage vs managed full-service rates',
+    href: '/pricing/',
+    keywords: ['pricing', 'rates', 'cost', 'email', 'sms', 'voice', 'mail'],
+    group: 'Pages',
+  },
+  {
+    id: 'models',
+    title: 'HaystaqDNA Models',
+    description: '160+ issue, behavior, candidate, and turnout scores',
+    href: '/models/',
+    keywords: ['models', 'haystaq', 'scores', 'targeting'],
+    group: 'Pages',
+  },
+  {
+    id: 'tiers',
+    title: 'Contribution minimums',
+    description: 'Local, county, legislative, and statewide minimums',
+    href: '/cooperative/#minimums',
+    keywords: ['tiers', 'minimums', 'cooperative', 'pricing', 'metro', '50k'],
+    group: 'Anchors',
+  },
+  {
+    id: 'platform',
+    title: 'Electd Platform',
+    description: '$149/month political operating system',
+    href: '/platform/',
+    keywords: ['electd', 'platform', 'crm', 'canvass', 'phones'],
+    group: 'Pages',
+  },
+  {
+    id: 'managed',
+    title: 'Managed Outreach',
+    description: 'Full-service email and SMS on Electd',
+    href: '/managed/',
+    keywords: ['managed', 'services', 'full service'],
+    group: 'Pages',
+  },
+  {
+    id: 'join',
+    title: 'Join / Request briefing',
+    description: 'Request information, platform, managed, or demo',
+    href: '/join/',
+    keywords: ['join', 'contact', 'demo', 'briefing', 'form'],
+    group: 'Pages',
+  },
+  {
+    id: 'data',
+    title: 'L2 Data Architecture',
+    description: 'Enhanced voter intelligence fields and structure',
+    href: '/data/',
+    keywords: ['data', 'l2', 'voter', 'file', 'fields'],
+    group: 'Pages',
+  },
+  {
+    id: 'dictionary',
+    title: 'L2 Voter Data Dictionary (PDF)',
+    description: 'Official L2 field dictionary',
+    href: '/assets/L2-Voter-Data-Dictionary.pdf',
+    keywords: ['dictionary', 'pdf', 'fields', 'documentation'],
+    group: 'Documents',
+  },
+  {
+    id: 'haystaq-pdf',
+    title: 'Haystaq Model List (PDF)',
+    description: 'Official HaystaqDNA model catalog',
+    href: '/assets/L2-Haystaq-Model-List.pdf',
+    keywords: ['haystaq', 'pdf', 'model list'],
+    group: 'Documents',
+  },
+  {
+    id: 'cooperative',
+    title: 'Data Cooperative',
+    description: 'Terms, metro rule, and founding purchase',
+    href: '/cooperative/',
+    keywords: ['cooperative', 'terms', 'founding'],
+    group: 'Pages',
+  },
+  {
+    id: 'problem',
+    title: 'The Problem',
+    description: 'Why incomplete contact data fails campaigns',
+    href: '/problem/',
+    keywords: ['problem', 'why'],
+    group: 'Pages',
+  },
+  {
+    id: 'privacy',
+    title: 'Private contacts',
+    description: 'Campaign relationships stay firewalled',
+    href: '/privacy/',
+    keywords: ['privacy', 'contacts', 'firewall'],
+    group: 'Pages',
+  },
+  {
+    id: 'van',
+    title: 'VAN & existing tools',
+    description: 'Append enhanced data without abandoning VAN',
+    href: '/van/',
+    keywords: ['van', 'ngp', 'tools'],
+    group: 'Pages',
+  },
+  {
+    id: 'how',
+    title: 'How it works',
+    description: 'Stack overview for Arkansas campaigns',
+    href: '/how-it-works/',
+    keywords: ['how', 'works', 'process'],
+    group: 'Pages',
+  },
+];

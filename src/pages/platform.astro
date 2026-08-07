@@ -1,30 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Electd Platform — $149/month | Arkansas Campaign Data Cooperative</title>
-  <meta name="description" content="Arkansas campaigns on Electd: $149/month, no contract. Voter data, list building, canvassing, phone banking, email, SMS, voice, and direct mail." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div data-site-header></div>
-  <div class="subnav" data-subnav></div>
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PartnerImage from '@/components/PartnerImage.astro';
+import { electdOfferSchema } from '@/lib/schema';
+---
 
-  <main id="main">
-    <section class="page-hero">
+<BaseLayout title="Electd Platform — $149/month | Arkansas Campaign Data Cooperative" description="Arkansas campaigns on Electd: $149/month, no contract. Voter data, list building, canvassing, phone banking, email, SMS, voice, and direct mail." schemaExtra={[electdOfferSchema]}>
+<section class="page-hero">
       <div class="section-inner">
-        <p class="breadcrumb"><a href="index.html">Home</a> / Electd</p>
+        <p class="breadcrumb"><a href="/">Home</a> / Electd</p>
         <p class="brand-lockup">Powered by <a class="brand-link" href="https://www.electd.io/" rel="noopener noreferrer" target="_blank">Electd</a></p>
-        <h1>Turn political data into action—for $149 a month.</h1>
+        <h1 transition:name="page-title">Turn political data into action—for $149 a month.</h1>
         <p class="hero-lede">Electd is a political operating system built by grassroots organizers. Plan, organize, and execute from one platform—with no long-term contract.</p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="join.html?intent=platform">Get platform access</a>
-          <a class="btn btn-secondary" href="pricing.html">Outreach rates</a>
+          <a class="btn btn-primary" href="/join/?intent=platform">Get platform access</a>
+          <a class="btn btn-secondary" href="/pricing/">Outreach rates</a>
           <a class="btn btn-ghost" href="https://www.electd.io/" rel="noopener noreferrer" target="_blank">Visit Electd.io</a>
         </div>
       </div>
@@ -42,7 +31,7 @@
           </ol>
         </nav>
         <figure class="product-figure">
-          <img src="https://www.electd.io/_assets/v11/69335411794cb3a826df4e827c5f9cf563f37819.png" alt="Electd product preview" width="1200" height="630" loading="eager" />
+          <PartnerImage variant="electd-preview" loading="eager" class="product-shot" />
           <figcaption>Product imagery from <a href="https://www.electd.io/" rel="noopener noreferrer" target="_blank">Electd</a>.</figcaption>
         </figure>
       </div>
@@ -51,14 +40,14 @@
     <section id="subscription" class="section">
       <div class="section-inner">
         <div class="partner-row">
-          <img class="partner-logo" src="https://www.electd.io/_assets/v11/17ee62d2dd69791692368ecac8373bbe5f6f3d5e.png" alt="Electd" width="48" height="48" />
+          <PartnerImage class="partner-logo" variant="electd-mark" loading="lazy" />
           <div>
             <p class="price-label">Monthly subscription</p>
             <p class="price-amount" style="margin:0.15em 0 0.4em"><span>$149</span> per month</p>
             <p>No contract. Cancel anytime. Includes Electd campaign platform access.</p>
           </div>
         </div>
-        <h2>What’s included</h2>
+        <h2 >What’s included</h2>
         <ul class="feature-list two-col">
           <li>Voter data access</li>
           <li>List building and targeting</li>
@@ -71,14 +60,14 @@
         </ul>
         <div class="data-path">
           <h3>Arkansas data layers</h3>
-          <p>Start with SOS registration data plus campaign-provided contacts. Optional <a href="data.html">L2-enhanced</a> statewide data is funded separately through the <a href="cooperative.html">cooperative</a>.</p>
+          <p>Start with SOS registration data plus campaign-provided contacts. Optional <a href="/data/">L2-enhanced</a> statewide data is funded separately through the <a href="/cooperative/">cooperative</a>.</p>
         </div>
       </div>
     </section>
 
     <section id="how" class="section section-platform">
       <div class="section-inner">
-        <h2>How Electd works</h2>
+        <h2 >How Electd works</h2>
         <p class="lead">From <a href="https://www.electd.io/" rel="noopener noreferrer" target="_blank">Electd</a>: every campaign action becomes intelligence—voter data, outreach, and activity in one system.</p>
         <div class="feature-blocks">
           <article>
@@ -100,7 +89,7 @@
 
     <section id="capabilities" class="section">
       <div class="section-inner">
-        <h2>From strategy to execution</h2>
+        <h2 >From strategy to execution</h2>
         <p class="lead">Spend less time on spreadsheets and disconnected tools—more time talking to voters.</p>
         <div class="drill-grid">
           <article class="drill-card"><h3>Campaign IQ</h3><p>Strategy intelligence: what to prioritize, who to contact, where you stand.</p></article>
@@ -112,15 +101,15 @@
         </div>
         <div class="source-links">
           <a class="btn btn-outline" href="https://www.electd.io/" rel="noopener noreferrer" target="_blank">Full Electd site</a>
-          <a class="btn btn-outline" href="managed.html">Prefer managed sends?</a>
-          <a class="btn btn-outline" href="how-it-works.html">End-to-end path</a>
+          <a class="btn btn-outline" href="/managed/">Prefer managed sends?</a>
+          <a class="btn btn-outline" href="/how-it-works/">End-to-end path</a>
         </div>
       </div>
     </section>
 
     <section id="usage" class="section section-foundation">
       <div class="section-inner">
-        <h2>Outreach is usage-based</h2>
+        <h2 >Outreach is usage-based</h2>
         <p class="lead">Quoted Electd rates for Arkansas cooperative participants:</p>
         <ul class="feature-list">
           <li>Email: <strong>$0.0144</strong> per verified email sent</li>
@@ -128,14 +117,10 @@
           <li>Voice: <strong>$0.04</strong> per minute after connection</li>
           <li>Direct mail: <strong>$0.70</strong> per mailer (print &amp; postage)</li>
         </ul>
-        <p><a class="btn btn-outline" href="pricing.html">Compare vs managed rates</a> <a class="btn btn-primary" href="join.html?intent=platform">Request access</a></p>
+        <p><a class="btn btn-outline" href="/pricing/">Compare vs managed rates</a> <a class="btn btn-primary" href="/join/?intent=platform">Request access</a></p>
         <p class="attr-note">Platform product and imagery © <a href="https://www.electd.io/" rel="noopener noreferrer" target="_blank">Electd</a>.</p>
       </div>
     </section>
-  </main>
 
-  <div data-site-footer></div>
-  <script src="js/site-chrome.js"></script>
-  <script src="js/main.js"></script>
-</body>
-</html>
+</BaseLayout>
+

@@ -1,0 +1,80 @@
+---
+import { isActive, primaryNav } from '@/data/nav';
+import ExploreNav from '@/components/ExploreNav.astro';
+
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+---
+
+<header class="site-header" data-header>
+  <div class="header-inner">
+    <a class="logo" href="/" transition:name="site-logo">
+      <img
+        class="logo-ar"
+        src="/assets/arkansas-logo-dark.svg"
+        width="40"
+        height="35"
+        alt=""
+      />
+      <span class="logo-text">Arkansas Campaign Data Cooperative</span>
+    </a>
+    <nav id="site-nav" class="site-nav" data-nav aria-label="Primary">
+      {
+        primaryNav.map((item) => {
+          const active = isActive(currentPath, item);
+          if (item.cta) {
+            return (
+              <a
+                href={item.href}
+                class={`nav-cta${active ? ' is-active' : ''}`}
+                aria-current={active ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            );
+          }
+          return (
+            <a
+              href={item.href}
+              class={active ? 'is-active' : undefined}
+              aria-current={active ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          );
+        })
+      }
+      <details class="explore-nav">
+        <summary>Explore</summary>
+        <div class="explore-panel" role="group" aria-label="Explore sections">
+          <ExploreNav />
+        </div>
+      </details>
+    </nav>
+    <div class="header-actions">
+      <button
+        class="palette-trigger"
+        type="button"
+        data-palette-open
+        aria-haspopup="dialog"
+        aria-controls="command-palette"
+      >
+        <span class="palette-trigger-label">Search</span>
+        <kbd class="palette-kbd">Ctrl K</kbd>
+      </button>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        data-nav-toggle
+      >
+        <span class="sr-only">Menu</span>
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>

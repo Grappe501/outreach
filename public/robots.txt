@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://outreach-ar.netlify.app/sitemap-index.xml

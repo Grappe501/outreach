@@ -1,0 +1,44 @@
+---
+import { navIndex } from '@/data/nav-index';
+---
+
+<div
+  id="command-palette"
+  class="cmdk"
+  data-command-palette
+  hidden
+  role="dialog"
+  aria-modal="true"
+  aria-expanded="false"
+  aria-labelledby="cmdk-title"
+>
+  <div class="cmdk-backdrop" data-palette-close></div>
+  <div class="cmdk-panel">
+    <h2 id="cmdk-title" class="sr-only">Site search</h2>
+    <label class="cmdk-label" for="cmdk-input">Jump to</label>
+    <input
+      id="cmdk-input"
+      class="cmdk-input"
+      type="search"
+      placeholder="Search pages, rates, models, PDFs…"
+      autocomplete="off"
+      autocorrect="off"
+      spellcheck="false"
+      data-palette-input
+    />
+    <ul class="cmdk-list" role="listbox" data-palette-list>
+      {
+        navIndex.map((item, i) => (
+          <li role="option" data-palette-item data-href={item.href} data-title={item.title} data-keywords={item.keywords.join(' ')} data-group={item.group} aria-selected={i === 0 ? 'true' : 'false'}>
+            <span class="cmdk-item-title">{item.title}</span>
+            <span class="cmdk-item-desc">{item.description}</span>
+            <span class="cmdk-item-group">{item.group}</span>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="cmdk-hint">
+      <kbd>↑</kbd><kbd>↓</kbd> navigate · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close
+    </p>
+  </div>
+</div>

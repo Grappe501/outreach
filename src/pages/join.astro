@@ -1,26 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Join / Request Information | Arkansas Campaign Data Cooperative</title>
-  <meta name="description" content="Request information, platform access, managed services, cooperative pricing, or a demonstration." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div data-site-header></div>
-  <div class="subnav" data-subnav></div>
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
 
-  <main id="main">
-    <section id="join" class="section section-join" style="padding-top:clamp(3rem,8vw,5rem)">
+<BaseLayout title="Join / Request Information | Arkansas Campaign Data Cooperative" description="Request information, platform access, managed services, cooperative pricing, or a demonstration.">
+<section id="join" class="section section-join" style="padding-top:clamp(3rem,8vw,5rem)">
       <div class="section-inner">
         <div class="join-intro">
           <p class="brand-lockup">Join the Arkansas Campaign Data Cooperative</p>
-          <h2>Better data. Private campaign contacts. Affordable communication. Stronger organizing.</h2>
+          <h2 transition:name="page-title">Better data. Private campaign contacts. Affordable communication. Stronger organizing.</h2>
         </div>
 
         <form class="join-form" name="cooperative-interest" method="POST" data-netlify="true" netlify-honeypot="bot-field">
@@ -63,10 +50,5 @@
         </form>
       </div>
     </section>
-  </main>
 
-  <div data-site-footer></div>
-  <script src="js/site-chrome.js"></script>
-  <script src="js/main.js"></script>
-</body>
-</html>
+</BaseLayout>

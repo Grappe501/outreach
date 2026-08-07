@@ -1,30 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rates — Electd vs Managed | Arkansas Campaign Data Cooperative</title>
-  <meta name="description" content="Electd $149/month plus quoted outreach rates vs managed full-service email and SMS for Arkansas campaigns." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div data-site-header></div>
-  <div class="subnav" data-subnav></div>
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PartnerImage from '@/components/PartnerImage.astro';
+import { pricingOfferCatalog } from '@/lib/schema';
+---
 
-  <main id="main">
-    <section class="page-hero">
+<BaseLayout title="Rates — Electd vs Managed | Arkansas Campaign Data Cooperative" description="Electd $149/month plus quoted outreach rates vs managed full-service email and SMS for Arkansas campaigns." schemaExtra={[pricingOfferCatalog]}>
+<section class="page-hero">
       <div class="section-inner">
-        <p class="breadcrumb"><a href="index.html">Home</a> / Rates</p>
+        <p class="breadcrumb"><a href="/">Home</a> / Rates</p>
         <p class="brand-lockup">Quoted pricing</p>
-        <h1>Electd platform rates vs managed full-service.</h1>
+        <h1 transition:name="page-title">Electd platform rates vs managed full-service.</h1>
         <p class="hero-lede">Self-serve on <a href="https://www.electd.io/" rel="noopener noreferrer" target="_blank">Electd</a>, or let us run full-service email and text on top of that stack. L2 data is a separate cooperative cost.</p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="join.html?intent=platform">Get the platform</a>
-          <a class="btn btn-secondary" href="join.html?intent=managed">Ask about managed</a>
+          <a class="btn btn-primary" href="/join/?intent=platform">Get the platform</a>
+          <a class="btn btn-secondary" href="/join/?intent=managed">Ask about managed</a>
         </div>
       </div>
     </section>
@@ -32,7 +21,7 @@
     <section class="section">
       <div class="section-inner">
         <div class="partner-row">
-          <img class="partner-logo" src="https://www.electd.io/_assets/v11/17ee62d2dd69791692368ecac8373bbe5f6f3d5e.png" alt="Electd" width="48" height="48" />
+          <PartnerImage class="partner-logo" variant="electd-mark" loading="lazy" />
           <div>
             <h2 style="margin:0 0 0.35em">Platform subscription</h2>
             <p class="price-amount" style="margin:0 0 0.5em"><span>$149</span> per month</p>
@@ -44,13 +33,13 @@
             </ul>
           </div>
         </div>
-        <p><a href="platform.html">Electd details →</a> · <a href="https://www.electd.io/" rel="noopener noreferrer" target="_blank">electd.io</a></p>
+        <p><a href="/platform/">Electd details →</a> · <a href="https://www.electd.io/" rel="noopener noreferrer" target="_blank">electd.io</a></p>
       </div>
     </section>
 
     <section class="section section-platform">
       <div class="section-inner">
-        <h2>Channel rates</h2>
+        <h2 >Channel rates</h2>
         <p class="rate-disclaimer"><strong>Platform column:</strong> quoted <a href="https://www.electd.io/" rel="noopener noreferrer" target="_blank">Electd</a> rates. <strong>Managed column:</strong> full-service programs we operate for you.</p>
         <div class="rate-table-wrap">
           <table class="rate-table">
@@ -90,18 +79,18 @@
             <h3>Electd / Platform</h3>
             <p class="offer-price">$149/mo + usage</p>
             <p>You build lists and send inside Electd.</p>
-            <a class="btn btn-outline" href="platform.html">Platform details</a>
+            <a class="btn btn-outline" href="/platform/">Platform details</a>
           </div>
           <div class="offer-item">
             <h3>Managed</h3>
             <p class="offer-price">Email $0.015 · SMS $0.028</p>
             <p>We handle list prep, sends, and delivery coordination.</p>
-            <a class="btn btn-outline" href="managed.html">Managed details</a>
+            <a class="btn btn-outline" href="/managed/">Managed details</a>
           </div>
         </div>
         <aside class="coop-aside">
           <h3>L2 Data Cooperative is separate</h3>
-          <p>Enhanced statewide data from <a href="https://l2-data.com/" rel="noopener noreferrer" target="_blank">L2</a> is an optional one-time contribution—not included in $149. <a href="cooperative.html">See tiers →</a> · <a href="data.html">L2 overview →</a></p>
+          <p>Enhanced statewide data from <a href="https://l2-data.com/" rel="noopener noreferrer" target="_blank">L2</a> is an optional one-time contribution—not included in $149. <a href="/cooperative/">See tiers →</a> · <a href="/data/">L2 overview →</a></p>
         </aside>
       </div>
     </section>
@@ -110,19 +99,15 @@
       <div class="section-inner">
         <div class="join-intro">
           <p class="brand-lockup">Ready to talk numbers?</p>
-          <h2>Platform, managed, or both.</h2>
+          <h2 >Platform, managed, or both.</h2>
         </div>
         <div class="cta-row">
-          <a class="btn btn-primary" href="join.html?intent=platform">Platform</a>
-          <a class="btn btn-secondary" href="join.html?intent=managed">Managed</a>
-          <a class="btn btn-ghost" href="join.html?intent=info">General information</a>
+          <a class="btn btn-primary" href="/join/?intent=platform">Platform</a>
+          <a class="btn btn-secondary" href="/join/?intent=managed">Managed</a>
+          <a class="btn btn-ghost" href="/join/?intent=info">General information</a>
         </div>
       </div>
     </section>
-  </main>
 
-  <div data-site-footer></div>
-  <script src="js/site-chrome.js"></script>
-  <script src="js/main.js"></script>
-</body>
-</html>
+</BaseLayout>
+

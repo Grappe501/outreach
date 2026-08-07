@@ -1,37 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Managed Communications | Arkansas Campaign Data Cooperative</title>
-  <meta name="description" content="Full-service email at $0.015/contact and SMS at $0.028/text on the Electd stack for Arkansas campaigns." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div data-site-header></div>
-  <div class="subnav" data-subnav></div>
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PartnerImage from '@/components/PartnerImage.astro';
+---
 
-  <main id="main">
-    <section class="page-hero">
+<BaseLayout title="Managed Communications | Arkansas Campaign Data Cooperative" description="Full-service email at $0.015/contact and SMS at $0.028/text on the Electd stack for Arkansas campaigns.">
+<section class="page-hero">
       <div class="section-inner">
-        <p class="breadcrumb"><a href="index.html">Home</a> / Managed</p>
+        <p class="breadcrumb"><a href="/">Home</a> / Managed</p>
         <p class="brand-lockup">Managed / full-service</p>
-        <h1>We run the outreach. You stay focused on organizing.</h1>
+        <h1 transition:name="page-title">We run the outreach. You stay focused on organizing.</h1>
         <p class="hero-lede">Full-service programs on <a href="https://www.electd.io/" rel="noopener noreferrer" target="_blank">Electd</a>—list prep, send ops, compliance basics, delivery coordination, and reporting.</p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="join.html?intent=managed">Talk about managed service</a>
-          <a class="btn btn-secondary" href="pricing.html">Compare rates</a>
+          <a class="btn btn-primary" href="/join/?intent=managed">Talk about managed service</a>
+          <a class="btn btn-secondary" href="/pricing/">Compare rates</a>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="section-inner">
-        <h2>What’s included</h2>
+        <h2 >What’s included</h2>
         <ul class="feature-list two-col">
           <li>List building and segmentation</li>
           <li>Message and creative coordination</li>
@@ -45,7 +33,7 @@
 
     <section class="section section-platform">
       <div class="section-inner">
-        <h2>Full-service rates</h2>
+        <h2 >Full-service rates</h2>
         <div class="rate-table-wrap">
           <table class="rate-table">
             <thead>
@@ -59,24 +47,20 @@
             </tbody>
           </table>
         </div>
-        <p class="rate-note">Self-serve Electd is <strong>$149/month</strong>. Pair with optional <a href="data.html">L2 data</a> via the <a href="cooperative.html">cooperative</a>.</p>
-        <a class="btn btn-outline" href="pricing.html">Electd vs Managed table</a>
+        <p class="rate-note">Self-serve Electd is <strong>$149/month</strong>. Pair with optional <a href="/data/">L2 data</a> via the <a href="/cooperative/">cooperative</a>.</p>
+        <a class="btn btn-outline" href="/pricing/">Electd vs Managed table</a>
       </div>
     </section>
 
     <section class="section section-product">
       <div class="section-inner">
         <figure class="product-figure">
-          <img src="https://www.electd.io/_assets/v11/69335411794cb3a826df4e827c5f9cf563f37819.png" alt="Electd platform" width="1200" height="630" loading="lazy" />
+          <PartnerImage variant="electd-preview" loading="lazy" class="product-shot" />
           <figcaption>Managed programs run on <a href="https://www.electd.io/" rel="noopener noreferrer" target="_blank">Electd</a>.</figcaption>
         </figure>
-        <a class="btn btn-primary" href="join.html?intent=managed">Request managed pricing</a>
+        <a class="btn btn-primary" href="/join/?intent=managed">Request managed pricing</a>
       </div>
     </section>
-  </main>
 
-  <div data-site-footer></div>
-  <script src="js/site-chrome.js"></script>
-  <script src="js/main.js"></script>
-</body>
-</html>
+</BaseLayout>
+

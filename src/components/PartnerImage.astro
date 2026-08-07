@@ -1,0 +1,60 @@
+---
+import { Image } from 'astro:assets';
+import electdMark from '../assets/partners/electd-mark.png';
+import electdPreview from '../assets/partners/electd-preview.png';
+import l2Logo from '../assets/partners/l2-logo.png';
+
+type Variant = 'electd-mark' | 'electd-preview' | 'l2-logo';
+
+interface Props {
+  variant: Variant;
+  class?: string;
+  width?: number;
+  height?: number;
+  loading?: 'eager' | 'lazy';
+  alt?: string;
+}
+
+const {
+  variant,
+  class: className = '',
+  width,
+  height,
+  loading = 'lazy',
+  alt,
+} = Astro.props;
+
+const map = {
+  'electd-mark': {
+    src: electdMark,
+    alt: alt ?? 'Electd',
+    width: width ?? 48,
+    height: height ?? 48,
+  },
+  'electd-preview': {
+    src: electdPreview,
+    alt: alt ?? 'Electd product preview',
+    width: width ?? 1200,
+    height: height ?? 630,
+  },
+  'l2-logo': {
+    src: l2Logo,
+    alt: alt ?? 'L2 Data',
+    width: width ?? 120,
+    height: height ?? 40,
+  },
+} as const;
+
+const img = map[variant];
+---
+
+<Image
+  src={img.src}
+  alt={img.alt}
+  width={img.width}
+  height={img.height}
+  class={className}
+  loading={loading}
+  format="webp"
+  quality={80}
+/>

@@ -1,30 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>L2 Data Architecture | Arkansas Campaign Data Cooperative</title>
-  <meta name="description" content="Deep dive into L2 voter file fields, contact intelligence, districts, wealth, donors, HaystaqDNA models—and how the Arkansas cooperative uses them." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div data-site-header></div>
-  <div class="subnav" data-subnav></div>
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PartnerImage from '@/components/PartnerImage.astro';
+---
 
-  <main id="main">
-    <section class="page-hero">
+<BaseLayout title="L2 Data Architecture | Arkansas Campaign Data Cooperative" description="Deep dive into L2 voter file fields, contact intelligence, districts, wealth, donors, HaystaqDNA models—and how the Arkansas cooperative uses them.">
+<section class="page-hero">
       <div class="section-inner">
-        <p class="breadcrumb"><a href="index.html">Home</a> / L2 Data</p>
+        <p class="breadcrumb"><a href="/">Home</a> / L2 Data</p>
         <p class="brand-lockup">Enhanced statewide intelligence · <a class="brand-link" href="https://l2-data.com/" rel="noopener noreferrer" target="_blank">L2 Data</a></p>
-        <h1>Hundreds of fields. One cooperative purchase.</h1>
+        <h1 transition:name="page-title">Hundreds of fields. One cooperative purchase.</h1>
         <p class="hero-lede">For over 50 years, L2 has been the gold standard for voter contact and targeting information. If the cooperative funds acquisition, Arkansas participants receive jurisdiction-appropriate access to this enhanced architecture—subject to final licensing.</p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="cooperative.html">Contribution minimums</a>
-          <a class="btn btn-secondary" href="assets/L2-Voter-Data-Dictionary.pdf">Data dictionary PDF</a>
+          <a class="btn btn-primary" href="/cooperative/">Contribution minimums</a>
+          <a class="btn btn-secondary" href="/assets/L2-Voter-Data-Dictionary.pdf">Data dictionary PDF</a>
           <a class="btn btn-ghost" href="https://l2-data.com/" rel="noopener noreferrer" target="_blank">Visit L2</a>
         </div>
       </div>
@@ -44,7 +32,7 @@
           </ol>
         </nav>
         <div class="partner-band">
-          <img src="https://l2-data.com/wp-content/uploads/2021/11/L2-Logo-160.png" alt="L2 Data" width="140" height="48" />
+          <PartnerImage variant="l2-logo" loading="lazy" />
           <p>Field names and product claims summarize L2’s public data dictionary and marketing. Authoritative detail: <a href="https://l2-data.com/" rel="noopener noreferrer" target="_blank">l2-data.com</a>.</p>
         </div>
       </div>
@@ -52,7 +40,7 @@
 
     <section id="scale" class="section section-problem">
       <div class="section-inner">
-        <h2>National scale, Arkansas application</h2>
+        <h2 >National scale, Arkansas application</h2>
         <div class="stats-row">
           <div class="stat-block"><p class="stat-num">217M+</p><p class="stat-label">Voter records (national)</p></div>
           <div class="stat-block"><p class="stat-num">260M+</p><p class="stat-label">Consumer records</p></div>
@@ -69,7 +57,7 @@
 
     <section id="dictionary" class="section section-foundation">
       <div class="section-inner">
-        <h2>Voter file taxonomy</h2>
+        <h2 >Voter file taxonomy</h2>
         <p class="lead">From L2’s voter data dictionary—hundreds of fields to find target voters:</p>
         <div class="taxonomy-grid">
           <article class="taxonomy-card">
@@ -122,7 +110,7 @@
           </article>
         </div>
         <div class="doc-links">
-          <a class="btn btn-outline" href="assets/L2-Voter-Data-Dictionary.pdf">Full L2 voter data dictionary (PDF)</a>
+          <a class="btn btn-outline" href="/assets/L2-Voter-Data-Dictionary.pdf">Full L2 voter data dictionary (PDF)</a>
           <a class="btn btn-outline" href="https://l2-data.com/voter-data/" rel="noopener noreferrer" target="_blank">L2 voter data product</a>
         </div>
       </div>
@@ -130,7 +118,7 @@
 
     <section id="contact" class="section section-platform">
       <div class="section-inner">
-        <h2>Every touchpoint</h2>
+        <h2 >Every touchpoint</h2>
         <p class="lead">L2 positions contact lists for the channels campaigns actually run:</p>
         <ul class="feature-list two-col">
           <li>Phone lists</li>
@@ -140,17 +128,17 @@
           <li>Canvassing / walking lists</li>
           <li>Digital targeting</li>
         </ul>
-        <p>That directly addresses Arkansas’ operational pain: missing mobiles, incomplete emails, and stale addresses. <a href="problem.html">See the problem brief →</a></p>
+        <p>That directly addresses Arkansas’ operational pain: missing mobiles, incomplete emails, and stale addresses. <a href="/problem/">See the problem brief →</a></p>
       </div>
     </section>
 
     <section id="models" class="section">
       <div class="section-inner">
-        <h2>Predictive layer</h2>
+        <h2 >Predictive layer</h2>
         <div class="drill-grid">
           <article class="drill-card">
             <h3>HaystaqDNA models</h3>
-            <p>Hundreds of issue, behavior, and candidate flags/scores (0–100) beyond the standard L2 taxonomy. <a href="models.html">Open models brief →</a></p>
+            <p>Hundreds of issue, behavior, and candidate flags/scores (0–100) beyond the standard L2 taxonomy. <a href="/models/">Open models brief →</a></p>
           </article>
           <article class="drill-card">
             <h3>Causeway viewership models</h3>
@@ -165,13 +153,13 @@
             <p>All-adults consumer insights for DTC marketing, research, and analytics layered onto voter universes.</p>
           </article>
         </div>
-        <a class="btn btn-outline" href="assets/L2-Haystaq-Model-List.pdf">Haystaq model list PDF</a>
+        <a class="btn btn-outline" href="/assets/L2-Haystaq-Model-List.pdf">Haystaq model list PDF</a>
       </div>
     </section>
 
     <section id="workflow" class="section section-problem">
       <div class="section-inner">
-        <h2>Using L2 data</h2>
+        <h2 >Using L2 data</h2>
         <ol class="steps">
           <li><strong>Define your universe</strong> Filters across demographic, voter, consumer, and modeled behaviors.</li>
           <li><strong>Pull counts and analyze</strong> Compare criteria across districts; view geographically.</li>
@@ -188,29 +176,25 @@
 
     <section id="arkansas" class="section section-foundation">
       <div class="section-inner">
-        <h2>Arkansas cooperative use</h2>
+        <h2 >Arkansas cooperative use</h2>
         <p class="lead">We are working to acquire a professionally enhanced Arkansas voter and consumer file (~1.6 million records) through L2, funded by cooperative minimums—not by any single campaign alone.</p>
         <div class="policy-callout">
           <h3>Contribution minimums apply</h3>
           <p>Published cooperative amounts are <strong>minimums</strong>. If you can contribute more, please do. Local races in metro areas of <strong>50,000+</strong> pay the <strong>county minimum ($300)</strong>.</p>
-          <p><a href="cooperative.html#minimums">Read full policy →</a></p>
+          <p><a href="/cooperative/#minimums">Read full policy →</a></p>
         </div>
         <ul class="feature-list">
-          <li>Improve phones, emails, and addresses feeding <a href="platform.html">Electd</a> and <a href="van.html">VAN</a></li>
+          <li>Improve phones, emails, and addresses feeding <a href="/platform/">Electd</a> and <a href="/van/">VAN</a></li>
           <li>Apply Haystaq scores for persuasion, turnout, and channel strategy</li>
-          <li>Keep campaign-owned contacts firewalled — <a href="privacy.html">privacy</a></li>
+          <li>Keep campaign-owned contacts firewalled — <a href="/privacy/">privacy</a></li>
         </ul>
         <div class="source-links">
-          <a class="btn btn-primary" href="join.html?intent=reserve">Reserve cooperative pricing</a>
+          <a class="btn btn-primary" href="/join/?intent=reserve">Reserve cooperative pricing</a>
           <a class="btn btn-outline" href="https://l2-data.com/contact-us/" rel="noopener noreferrer" target="_blank">Contact L2</a>
         </div>
         <p class="attr-note">L2 product names, statistics, field taxonomy, and imagery © <a href="https://l2-data.com/" rel="noopener noreferrer" target="_blank">L2, Inc.</a> Arkansas Campaign Data Cooperative packages cooperative purchasing for Arkansas participants.</p>
       </div>
     </section>
-  </main>
 
-  <div data-site-footer></div>
-  <script src="js/site-chrome.js"></script>
-  <script src="js/main.js"></script>
-</body>
-</html>
+</BaseLayout>
+

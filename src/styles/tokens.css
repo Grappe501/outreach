@@ -1,0 +1,31 @@
+:root {
+  --ink: #020a08;
+  --ink-soft: #0c1c18;
+  --ink-muted: #243832;
+  --paper: #f4f6f3;
+  --paper-deep: #dde5e0;
+  --surface: #ffffff;
+  --teal: #062820;
+  --teal-mid: #0a3d33;
+  --teal-bright: #0f5749;
+  --copper: #b8480c;
+  --copper-deep: #8a3408;
+  --copper-glow: #e06a28;
+  --cream: #fff6ec;
+  --line: rgba(2, 10, 8, 0.16);
+  --line-strong: rgba(2, 10, 8, 0.26);
+  --shadow: 0 24px 60px rgba(2, 10, 8, 0.14);
+  --radius: 2px;
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "Source Sans 3", system-ui, sans-serif;
+  --max: 62rem;
+  --narrow: 40rem;
+  --gutter: clamp(1.25rem, 4.5vw, 3rem);
+  --page-inset: 0px;
+  --header-h: 4.35rem;
+  --text-on-dark: #f7faf8;
+  --text-on-dark-soft: #dce8e3;
+  --accent-on-dark: #ffc89a;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-top: env(safe-area-inset-top, 0px);
+}

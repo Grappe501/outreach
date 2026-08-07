@@ -1,0 +1,19 @@
+---
+import { moreLinks, primaryNav } from '@/data/nav';
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-brand">Arkansas Campaign Data Cooperative</p>
+    <p>Better Data. Better Organizing. Better Campaigns.</p>
+    <p class="footer-powered">
+      Platform: <a href="https://www.electd.io/" rel="noopener noreferrer" target="_blank">Electd</a>
+      · Enhanced data: <a href="https://l2-data.com/" rel="noopener noreferrer" target="_blank">L2 Data</a>
+    </p>
+    <nav class="footer-nav" aria-label="Footer">
+      {primaryNav.map((l) => <a href={l.href}>{l.label}</a>)}
+      {moreLinks.map((l) => <a href={l.href}>{l.label}</a>)}
+    </nav>
+    <p class="footer-meta">&copy; <span data-year></span> Arkansas Campaign Data Cooperative</p>
+  </div>
+</footer>

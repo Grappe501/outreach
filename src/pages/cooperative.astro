@@ -1,30 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Data Cooperative — Minimum Contributions | Arkansas Campaign Data Cooperative</title>
-  <meta name="description" content="Cooperative contribution minimums for L2 enhanced Arkansas data. Metro areas of 50,000+ pay county rate. Donate above minimum if you can." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div data-site-header></div>
-  <div class="subnav" data-subnav></div>
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { cooperativeFaqSchema } from '@/lib/schema';
+---
 
-  <main id="main">
-    <section class="page-hero">
+<BaseLayout title="Data Cooperative — Minimum Contributions | Arkansas Campaign Data Cooperative" description="Cooperative contribution minimums for L2 enhanced Arkansas data. Metro areas of 50,000+ pay county rate. Donate above minimum if you can." schemaExtra={[cooperativeFaqSchema]}>
+<section class="page-hero">
       <div class="section-inner">
-        <p class="breadcrumb"><a href="index.html">Home</a> / Cooperative</p>
+        <p class="breadcrumb"><a href="/">Home</a> / Cooperative</p>
         <p class="brand-lockup">Optional L2 data acquisition</p>
-        <h1>Share the cost. Fund the strongest possible file.</h1>
+        <h1 transition:name="page-title">Share the cost. Fund the strongest possible file.</h1>
         <p class="hero-lede">Statewide enhanced acquisition is approximately <strong style="color:#fff">$24,000</strong>. Published contribution amounts are <strong style="color:#ffd2b0">minimums</strong>—structured so as many campaigns as possible can participate. Separate from the $149 Electd subscription.</p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="join.html?intent=reserve">Reserve cooperative pricing</a>
-          <a class="btn btn-secondary" href="data.html">Inspect L2 architecture</a>
+          <a class="btn btn-primary" href="/join/?intent=reserve">Reserve cooperative pricing</a>
+          <a class="btn btn-secondary" href="/data/">Inspect L2 architecture</a>
         </div>
       </div>
     </section>
@@ -53,7 +41,7 @@
 
     <section id="tiers" class="section section-pricing">
       <div class="section-inner">
-        <h2>Contribution tiers <span class="min-badge">Minimums</span></h2>
+        <h2 >Contribution tiers <span class="min-badge">Minimums</span></h2>
         <div class="tier-grid">
           <article class="tier">
             <h3>Local races</h3>
@@ -83,7 +71,7 @@
 
     <section id="model" class="section section-model">
       <div class="section-inner">
-        <h2>How the cooperative model works</h2>
+        <h2 >How the cooperative model works</h2>
         <div class="math-stack">
           <div class="math-block">
             <p class="math-if">If 50 counties contribute at the $300 minimum:</p>
@@ -109,7 +97,7 @@
 
     <section id="receive" class="section">
       <div class="section-inner">
-        <h2>What participants receive</h2>
+        <h2 >What participants receive</h2>
         <p>Access to the portion of enhanced <a href="https://l2-data.com/" rel="noopener noreferrer" target="_blank">L2</a> data appropriate for campaign, district, county, local geography, or statewide jurisdiction—subject to final vendor licensing.</p>
         <ul class="feature-list two-col">
           <li>Improve voter-contact records</li>
@@ -120,27 +108,23 @@
           <li>Reduce wasted communication spend</li>
         </ul>
         <div class="source-links">
-          <a class="btn btn-outline" href="data.html">L2 architecture</a>
-          <a class="btn btn-outline" href="models.html">Haystaq models</a>
-          <a class="btn btn-outline" href="assets/L2-Voter-Data-Dictionary.pdf">Data dictionary PDF</a>
+          <a class="btn btn-outline" href="/data/">L2 architecture</a>
+          <a class="btn btn-outline" href="/models/">Haystaq models</a>
+          <a class="btn btn-outline" href="/assets/L2-Voter-Data-Dictionary.pdf">Data dictionary PDF</a>
         </div>
       </div>
     </section>
 
     <section id="conditional" class="section section-conditional">
       <div class="section-inner narrow">
-        <h2>Founding participation is conditional</h2>
+        <h2 >Founding participation is conditional</h2>
         <p>Cooperative pricing is available only if enough organizations participate to fund acquisition.</p>
         <p class="emphasis-strong">The statewide file will not be purchased—and pricing will not be finalized—unless participants collectively cover the acquisition cost.</p>
         <div class="cta-row" style="margin-top:1.5rem">
-          <a class="btn btn-primary" href="join.html?intent=reserve">Reserve cooperative pricing</a>
+          <a class="btn btn-primary" href="/join/?intent=reserve">Reserve cooperative pricing</a>
         </div>
       </div>
     </section>
-  </main>
 
-  <div data-site-footer></div>
-  <script src="js/site-chrome.js"></script>
-  <script src="js/main.js"></script>
-</body>
-</html>
+</BaseLayout>
+
