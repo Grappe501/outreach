@@ -1,0 +1,46 @@
+---
+import { comparisonRows } from '@/data/offers';
+---
+
+<section class="section section-tools" id="compare">
+  <div class="section-inner">
+    <p class="kicker">Choose your posture</p>
+    <h2>Comparison matrix</h2>
+    <p class="lead">
+      Status-quo VAN-only versus DIY Electd, managed outreach, and cooperative-enhanced data.
+    </p>
+
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th scope="col">Capability</th>
+            <th scope="col">VAN-only status quo</th>
+            <th scope="col">DIY Electd</th>
+            <th scope="col">Managed</th>
+            <th scope="col">Cooperative data</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            comparisonRows.map((row) => (
+              <tr>
+                <th scope="row">{row.feature}</th>
+                <td>{row.van}</td>
+                <td>{row.electd}</td>
+                <td>{row.managed}</td>
+                <td>{row.coop}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cta-row" style="margin-top:1.5rem">
+      <a class="btn btn-primary" href="/join/">Request a briefing</a>
+      <a class="btn btn-outline" href="/how-it-works/">See how it works</a>
+      <a class="btn btn-outline" href="/pricing/">Open the rate card</a>
+    </div>
+  </div>
+</section>

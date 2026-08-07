@@ -1,6 +1,11 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import PartnerImage from '@/components/PartnerImage.astro';
+import ProductMockup from '@/components/ProductMockup.astro';
+import MetricsStrip from '@/components/MetricsStrip.astro';
+import RateCalculator from '@/components/RateCalculator.astro';
+import FundingMeter from '@/components/FundingMeter.astro';
+import ComparisonMatrix from '@/components/ComparisonMatrix.astro';
 ---
 
 <BaseLayout
@@ -8,39 +13,48 @@ import PartnerImage from '@/components/PartnerImage.astro';
   description="Executive-grade Arkansas campaign infrastructure: Electd operating system, L2 enhanced voter intelligence, cooperative data acquisition, and managed outreach."
   ogImage="/og/home.png"
 >
-  <section class="hero">
+  <section class="hero hero--product">
     <div class="hero-visual" aria-hidden="true">
       <div class="hero-gradient"></div>
       <div class="hero-grid"></div>
     </div>
-    <div class="hero-content">
-      <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Statewide campaign infrastructure</p>
-      <div class="hero-brand">
-        <img
-          class="hero-map"
-          src="/assets/arkansas-logo.svg"
-          width="220"
-          height="200"
-          alt="Outline map of Arkansas with town markers"
-        />
-        <div>
+    <div class="hero-shell">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Statewide campaign infrastructure</p>
+        <div class="hero-brand-row">
+          <img
+            class="hero-map"
+            src="/assets/arkansas-logo.svg"
+            width="56"
+            height="50"
+            alt=""
+          />
           <p class="brand-lockup">Arkansas Campaign Data Cooperative</p>
-          <h1 transition:name="page-title">Better Data.<br />Better Organizing.<br />Better Campaigns.</h1>
+        </div>
+        <h1 transition:name="page-title">Better Data.<br />Better Organizing.<br />Better Campaigns.</h1>
+        <p class="hero-lede">
+          Electd for execution. L2 for enhanced voter intelligence. Managed outreach when you need capacity—private
+          campaign relationships kept firewalled.
+        </p>
+        <div class="cta-row home-hero-actions">
+          <a class="btn btn-primary" href="/join/">Request a briefing</a>
+          <a class="btn btn-secondary" href="#rate-calculator">Estimate outreach cost</a>
+          <a class="btn btn-ghost" href="#compare">Compare options</a>
         </div>
       </div>
-      <p class="hero-lede">
-        An institutional stack for serious Arkansas campaigns:
-        <a href="https://www.electd.io/" rel="noopener noreferrer" target="_blank">Electd</a> for execution,
-        <a href="https://l2-data.com/" rel="noopener noreferrer" target="_blank">L2</a> for enhanced voter
-        intelligence, managed outreach when you need capacity—and private campaign relationships kept firewalled.
-      </p>
-      <div class="cta-row home-hero-actions">
-        <a class="btn btn-primary" href="/join/">Request a briefing</a>
-        <a class="btn btn-secondary" href="/data/">Inspect the data architecture</a>
-        <a class="btn btn-ghost" href="/cooperative/">Cooperative terms</a>
+      <div class="hero-stage">
+        <ProductMockup />
       </div>
     </div>
   </section>
+
+  <MetricsStrip />
+
+  <RateCalculator />
+
+  <FundingMeter />
+
+  <ComparisonMatrix />
 
   <section class="section-cinema section-cinema-dark">
     <div class="section-inner">
@@ -63,34 +77,6 @@ import PartnerImage from '@/components/PartnerImage.astro';
           <li>Mailing addresses that bounce or waste postage</li>
           <li>Local knowledge trapped outside the voter file</li>
         </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-cinema section-cinema-light">
-    <div class="section-inner">
-      <p class="kicker">Problem → stack → execution</p>
-      <h2>One Arkansas path from data to doors to digital.</h2>
-      <p class="lead">
-        Electd runs the campaign OS. L2 enhances the file when the cooperative funds. Managed service fills capacity
-        gaps. Private contacts stay firewalled.
-      </p>
-      <div class="flow-rail stagger">
-        <article class="flow-step">
-          <span class="step-num">01 — Platform</span>
-          <h3>Electd at $149/mo</h3>
-          <p>Lists, CRM, canvass, phones, email, SMS, voice, mail—no contract.</p>
-        </article>
-        <article class="flow-step">
-          <span class="step-num">02 — Data</span>
-          <h3>L2 cooperative file</h3>
-          <p>Enhanced contacts and HaystaqDNA models, funded by published minimums.</p>
-        </article>
-        <article class="flow-step">
-          <span class="step-num">03 — Capacity</span>
-          <h3>Managed outreach</h3>
-          <p>Full-service email and SMS when your team needs execution support.</p>
-        </article>
       </div>
     </div>
   </section>
@@ -157,15 +143,6 @@ import PartnerImage from '@/components/PartnerImage.astro';
           <a href="/data/">Our brief</a> ·
           <a href="/assets/L2-Voter-Data-Dictionary.pdf">Data dictionary (PDF)</a>
         </p>
-      </div>
-      <div class="exec-panel">
-        <h3>For campaigns that can invest more</h3>
-        <p>
-          Cooperative contribution amounts are the <strong>minimum</strong> required to keep statewide acquisition
-          affordable for the broadest set of participants. If your campaign can contribute above the minimum, please
-          do—additional support strengthens the file for everyone.
-        </p>
-        <p><a href="/cooperative/#minimums">Read contribution policy →</a></p>
       </div>
       <div class="source-links">
         <a class="btn btn-outline" href="/problem/">The problem</a>

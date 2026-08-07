@@ -1,0 +1,16 @@
+---
+import { outcomeMetrics } from '@/data/offers';
+---
+
+<div class="metrics-strip" data-metrics-strip>
+  <div class="metrics-strip__inner">
+    {
+      outcomeMetrics.map((metric) => (
+        <div class="metrics-strip__item">
+          <span class="metrics-strip__value">{metric.value}</span>
+          <span class="metrics-strip__label">{metric.label}</span>
+        </div>
+      ))
+    }
+  </div>
+</div>

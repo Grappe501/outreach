@@ -1,0 +1,51 @@
+---
+import { funding } from '@/data/offers';
+
+const pct = Math.min(100, Math.round((funding.committed / funding.goal) * 100));
+const remaining = Math.max(0, funding.goal - funding.committed);
+const committedLabel = funding.committed.toLocaleString('en-US');
+const goalLabel = funding.goal.toLocaleString('en-US');
+const remainingLabel = remaining.toLocaleString('en-US');
+---
+
+<section class="section-cinema section-cinema-dark" id="funding">
+  <div class="section-inner">
+    <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Cooperative funding</p>
+    <h2>Founding L2 purchase progress</h2>
+    <p class="lead">{funding.note}</p>
+
+    <div
+      class="funding-meter"
+      data-funding-meter
+      role="group"
+      aria-label={`Cooperative funding ${pct} percent of goal`}
+    >
+      <div class="funding-meter__meta">
+        <p>
+          <strong>${committedLabel}</strong> committed
+          <span aria-hidden="true"> · </span>
+          <span>${goalLabel} goal</span>
+        </p>
+        <p class="funding-meter__pct">{pct}%</p>
+      </div>
+      <div
+        class="funding-meter__track"
+        role="progressbar"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow={pct}
+        aria-label="Funding progress"
+      >
+        <div class="funding-meter__fill" style={`width:${pct}%`}></div>
+      </div>
+      <div class="funding-meter__footer">
+        <p>${remainingLabel} remaining to threshold</p>
+        <p class="funding-meter__updated">{funding.updatedLabel}</p>
+      </div>
+      <div class="cta-row" style="margin-top:1.5rem">
+        <a class="btn btn-primary" href="/join/?intent=reserve">Reserve cooperative pricing</a>
+        <a class="btn btn-outline" href="/cooperative/#minimums">See contribution minimums</a>
+      </div>
+    </div>
+  </div>
+</section>

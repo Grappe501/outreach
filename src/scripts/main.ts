@@ -59,7 +59,7 @@ function initReveals() {
   }
 
   const revealTargets = document.querySelectorAll(
-    '.section h2, .section-cinema h2, .callout, .pull-quote, .tier, .math-block, .price-hero, .join-form, .better-list li, .problem-list li, .offer-item, .rate-table-wrap, .coop-aside, .product-figure, .feature-blocks, .topic-card, .stat-block, .drill-card, .taxonomy-card, .policy-callout, .exec-panel, .flow-step, .cinema-points li, .steps li, .partner-band',
+    '.section h2, .section-cinema h2, .section-tools h2, .callout, .pull-quote, .tier, .math-block, .price-hero, .join-form, .better-list li, .problem-list li, .offer-item, .rate-table-wrap, .coop-aside, .product-figure, .feature-blocks, .topic-card, .stat-block, .drill-card, .taxonomy-card, .policy-callout, .exec-panel, .flow-step, .cinema-points li, .steps li, .partner-band, .rate-calc, .funding-meter, .compare-wrap, .metrics-strip__item',
   );
   revealTargets.forEach((node, index) => {
     const el = node as HTMLElement;
@@ -290,11 +290,131 @@ function initPalette() {
   void go;
 }
 
+function money(n: number) {
+  return n.toLocaleString('en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+}
+
+function initRateCalc() {
+  const form = document.querySelector<HTMLFormElement>('[data-rate-calc]');
+  if (!form || form.getAttribute('data-bound') === 'true') return;
+  form.setAttribute('data-bound', 'true');
+
+  const configRaw = form.dataset.rateConfig;
+  if (!configRaw) return;
+
+  const config = JSON.parse(configRaw) as {
+    platform: number;
+    usage: { email: number; sms: number; voice: number; mail: number };
+    managed: { email: number; sms: number };
+  };
+
+  const usageEl = form.querySelector('[data-calc-usage]');
+  const totalEl = form.querySelector('[data-calc-total]');
+  const managedEl = form.querySelector('[data-calc-managed]');
+
+  const read = (name: string) => {
+    const input = form.elements.namedItem(name);
+    if (!(input instanceof HTMLInputElement)) return 0;
+    return Math.max(0, Number(input.value) || 0);
+  };
+
+  const update = () => {
+    const emails = read('emails');
+    const sms = read('sms');
+    const voice = read('voice');
+    const mail = read('mail');
+    const usage =
+      emails * config.usage.email +
+      sms * config.usage.sms +
+      voice * config.usage.voice +
+      mail * config.usage.mail;
+    const managed = emails * config.managed.email + sms * config.managed.sms;
+    if (usageEl) usageEl.textContent = money(usage);
+    if (totalEl) totalEl.textContent = money(usage + config.platform);
+    if (managedEl) managedEl.textContent = money(managed);
+  };
+
+  form.addEventListener('input', update);
+  update();
+}
+
+const mockTimers: number[] = [];
+
+function initProductMock() {
+  mockTimers.splice(0).forEach((id) => window.clearInterval(id));
+  if (prefersReducedMotion()) return;
+  const root = document.querySelector('.product-mock');
+  if (!root) return;
+  root.removeAttribute('data-bound');
+  root.setAttribute('data-bound', 'true');
+
+  const queries = [
+    'Show persuadable Democrats in Pulaski with mobile numbers…',
+    'Build a weekend canvass turf in Ward 2 with high turnout scores…',
+    'Queue an SMS wave to undecideds who opened last email…',
+    'List donors who haven’t been thanked in 30 days…',
+  ];
+  const activities = [
+    ['now', 'SMS wave queued · 2,400'],
+    ['1m', 'Ask Electd refreshed · Pulaski'],
+    ['3m', 'Canvass turf synced · Ward 2'],
+    ['7m', 'Email open rate · 41%'],
+    ['11m', 'New volunteer shift · 8'],
+    ['18m', 'Voice bank complete · 312 dials'],
+  ];
+
+  const queryEl = root.querySelector<HTMLElement>('[data-ask-query]');
+  const countEl = root.querySelector<HTMLElement>('[data-voter-count]');
+  const feed = root.querySelector<HTMLElement>('[data-activity-feed]');
+  let q = 0;
+  let a = 0;
+  let count = 12480;
+
+  if (queryEl) {
+    queryEl.style.transition = 'opacity 220ms ease';
+  }
+
+  mockTimers.push(
+    window.setInterval(() => {
+      q = (q + 1) % queries.length;
+      if (queryEl) {
+        queryEl.style.opacity = '0';
+        window.setTimeout(() => {
+          queryEl.textContent = queries[q] ?? queries[0] ?? '';
+          queryEl.style.opacity = '1';
+        }, 220);
+      }
+      count += Math.floor(Math.random() * 40) + 12;
+      if (countEl) countEl.textContent = count.toLocaleString('en-US');
+    }, 4200),
+  );
+
+  mockTimers.push(
+    window.setInterval(() => {
+      if (!feed) return;
+      a = (a + 1) % activities.length;
+      const item = activities[a];
+      if (!item) return;
+      const li = document.createElement('li');
+      li.innerHTML = `<time>${item[0]}</time> ${item[1]}`;
+      feed.prepend(li);
+      while (feed.children.length > 4) {
+        feed.lastElementChild?.remove();
+      }
+    }, 3200),
+  );
+}
+
 function boot() {
   initChrome();
   initReveals();
   initForm();
   initPalette();
+  initRateCalc();
+  initProductMock();
 }
 
 boot();

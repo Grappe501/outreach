@@ -1,0 +1,68 @@
+---
+import { managedRates, platformMonthly, usageRates } from '@/data/offers';
+---
+
+<section class="section section-tools" id="rate-calculator">
+  <div class="section-inner">
+    <p class="kicker">Interactive estimate</p>
+    <h2>Rate calculator</h2>
+    <p class="lead">
+      Rough monthly outreach cost on Electd usage rates. Platform subscription is separate at ${platformMonthly}/mo.
+    </p>
+
+    <form
+      class="rate-calc"
+      data-rate-calc
+      data-rate-config={JSON.stringify({
+        platform: platformMonthly,
+        usage: usageRates,
+        managed: managedRates,
+      })}
+    >
+      <div class="rate-calc__grid">
+        <label>
+          <span>Emails / month</span>
+          <input type="number" name="emails" min="0" step="100" value="5000" inputmode="numeric" />
+          <small>${usageRates.email.toFixed(4)} each</small>
+        </label>
+        <label>
+          <span>SMS / month</span>
+          <input type="number" name="sms" min="0" step="100" value="3000" inputmode="numeric" />
+          <small>${usageRates.sms.toFixed(3)} each</small>
+        </label>
+        <label>
+          <span>Voice minutes / month</span>
+          <input type="number" name="voice" min="0" step="50" value="500" inputmode="numeric" />
+          <small>${usageRates.voice.toFixed(2)} / min</small>
+        </label>
+        <label>
+          <span>Mail pieces / month</span>
+          <input type="number" name="mail" min="0" step="50" value="1000" inputmode="numeric" />
+          <small>${usageRates.mail.toFixed(2)} print &amp; postage</small>
+        </label>
+      </div>
+
+      <div class="rate-calc__result" aria-live="polite">
+        <div>
+          <p class="rate-calc__label">Estimated usage</p>
+          <p class="rate-calc__amount">$<span data-calc-usage>0</span><span class="rate-calc__per">/mo</span></p>
+        </div>
+        <div>
+          <p class="rate-calc__label">With platform</p>
+          <p class="rate-calc__amount">$<span data-calc-total>0</span><span class="rate-calc__per">/mo</span></p>
+        </div>
+        <div>
+          <p class="rate-calc__label">Managed email equivalent</p>
+          <p class="rate-calc__amount">$<span data-calc-managed>0</span><span class="rate-calc__per">/mo</span></p>
+          <small>Emails × ${managedRates.email.toFixed(3)} + SMS × ${managedRates.sms.toFixed(3)}</small>
+        </div>
+      </div>
+
+      <p class="rate-calc__note">
+        Illustrative only — final invoices follow live Electd / managed pricing.
+        <a href="/pricing/">Full rate card</a> ·
+        <a href="/join/?intent=platform">Request platform access</a>
+      </p>
+    </form>
+  </div>
+</section>
