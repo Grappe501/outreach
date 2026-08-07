@@ -1,26 +1,29 @@
 :root {
-  --ink: #061411;
-  --ink-soft: #1e322c;
-  --ink-muted: #3d524b;
-  --paper: #f6f7f4;
-  --paper-deep: #e6ebe7;
+  --ink: #020a08;
+  --ink-soft: #0c1c18;
+  --ink-muted: #243832;
+  --paper: #f4f6f3;
+  --paper-deep: #dde5e0;
   --surface: #ffffff;
-  --teal: #083029;
-  --teal-mid: #0d463c;
-  --teal-bright: #146355;
-  --copper: #c45312;
-  --copper-deep: #9a3d08;
-  --copper-glow: #f07838;
-  --cream: #fff8f1;
-  --line: rgba(6, 20, 17, 0.14);
-  --line-strong: rgba(6, 20, 17, 0.22);
-  --shadow: 0 24px 60px rgba(6, 20, 17, 0.14);
+  --teal: #062820;
+  --teal-mid: #0a3d33;
+  --teal-bright: #0f5749;
+  --copper: #b8480c;
+  --copper-deep: #8a3408;
+  --copper-glow: #e06a28;
+  --cream: #fff6ec;
+  --line: rgba(2, 10, 8, 0.16);
+  --line-strong: rgba(2, 10, 8, 0.26);
+  --shadow: 0 24px 60px rgba(2, 10, 8, 0.14);
   --radius: 2px;
   --font-display: "Bricolage Grotesque", system-ui, sans-serif;
   --font-body: "Source Sans 3", system-ui, sans-serif;
   --max: 70rem;
   --narrow: 42rem;
   --header-h: 4.35rem;
+  --text-on-dark: #f7faf8;
+  --text-on-dark-soft: #dce8e3;
+  --accent-on-dark: #ffc89a;
 }
 
 *,
@@ -297,8 +300,8 @@ li {
 .taxonomy-card p,
 .taxonomy-card ul {
   margin: 0;
-  font-size: 0.95rem;
-  color: var(--ink-muted);
+  font-size: 0.98rem;
+  color: var(--ink-soft);
 }
 
 .taxonomy-card ul {
@@ -353,7 +356,7 @@ li {
 
 .site-nav a {
   text-decoration: none;
-  color: var(--ink-soft);
+  color: var(--ink);
   font-size: 0.95rem;
   font-weight: 700;
 }
@@ -457,8 +460,16 @@ li {
   font-weight: 800;
   font-size: clamp(1.05rem, 2.4vw, 1.3rem);
   letter-spacing: 0.01em;
-  color: #f0c4a0;
+  color: var(--teal);
   margin: 0;
+}
+
+.hero .brand-lockup,
+.page-hero .brand-lockup,
+.section-join .brand-lockup,
+.section-van .brand-lockup,
+.section-model .brand-lockup {
+  color: var(--accent-on-dark);
 }
 
 .hero h1 {
@@ -470,13 +481,13 @@ li {
 .hero-lede {
   max-width: 36rem;
   font-size: clamp(1.12rem, 2vw, 1.32rem);
-  color: rgba(244, 248, 246, 0.92);
+  color: var(--text-on-dark-soft);
   margin-bottom: 1.75rem;
   font-weight: 500;
 }
 
 .hero-lede a {
-  color: #ffd2b0;
+  color: var(--accent-on-dark);
   font-weight: 700;
 }
 
@@ -699,20 +710,18 @@ li {
   background: var(--paper-deep);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-}
-
-.section-platform h2,
-.section-platform h3,
-.section-platform p,
-.section-platform li,
-.section-platform .lead,
-.section-platform a {
-  color: var(--ink-soft);
+  color: var(--ink);
 }
 
 .section-platform h2,
 .section-platform h3 {
   color: var(--teal);
+}
+
+.section-platform p,
+.section-platform li,
+.section-platform .lead {
+  color: var(--ink-soft);
 }
 
 .section-platform a {
@@ -739,7 +748,7 @@ li {
   letter-spacing: 0.1em;
   font-size: 0.78rem;
   font-weight: 800;
-  color: var(--ink-muted);
+  color: var(--ink-soft);
 }
 
 .price-amount {
@@ -801,7 +810,7 @@ li {
 
 .tier-note {
   font-size: 0.98rem;
-  color: var(--ink-muted);
+  color: var(--ink-soft);
 }
 
 .section-model {
@@ -999,7 +1008,7 @@ li {
 
 .form-grid input::placeholder,
 .form-grid textarea::placeholder {
-  color: var(--ink-muted);
+  color: #445851;
 }
 
 .form-grid input:focus,
@@ -1125,7 +1134,7 @@ li {
 }
 
 .page-hero .brand-lockup {
-  color: #ffd2b0;
+  color: var(--accent-on-dark);
 }
 
 .page-hero h1 {
@@ -1136,13 +1145,13 @@ li {
 
 .page-hero .hero-lede {
   max-width: 38rem;
-  color: rgba(244, 248, 246, 0.92);
+  color: var(--text-on-dark-soft);
   margin-bottom: 1.5rem;
 }
 
 .page-hero .hero-lede a,
 .page-hero .brand-link {
-  color: #ffd2b0;
+  color: var(--accent-on-dark);
 }
 
 .page-hero .hero-lede a:hover,
@@ -1237,12 +1246,12 @@ li {
 }
 
 .rate-table .rate-na {
-  color: var(--ink-muted);
+  color: var(--ink-soft);
 }
 
 .rate-note {
   font-size: 0.98rem;
-  color: var(--ink-muted);
+  color: var(--ink-soft);
 }
 
 .coop-aside {
@@ -1292,7 +1301,7 @@ li {
 .product-figure figcaption {
   margin-top: 0.85rem;
   font-size: 0.95rem;
-  color: var(--ink-muted);
+  color: var(--ink-soft);
   font-weight: 600;
 }
 
@@ -1358,8 +1367,8 @@ li {
 
 .attr-note {
   margin-top: 2rem;
-  font-size: 0.92rem;
-  color: var(--ink-muted);
+  font-size: 0.95rem;
+  color: var(--ink-soft);
 }
 
 .data-path {
@@ -1406,7 +1415,7 @@ li {
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--ink-muted);
+  color: var(--ink-soft);
   margin-right: 0.25rem;
 }
 
@@ -1414,7 +1423,7 @@ li {
   font-size: 0.92rem;
   font-weight: 700;
   text-decoration: none;
-  color: var(--ink-soft);
+  color: var(--ink);
 }
 
 .subnav a:hover {
@@ -1648,6 +1657,95 @@ li {
 @keyframes floatMap {
   from { transform: translate3d(0, 0, 0); }
   to { transform: translate3d(-12px, -18px, 0); }
+}
+
+/* Hard contrast lock for light surfaces */
+.section:not(.section-van):not(.section-model):not(.section-join),
+.offer-strip,
+.section-product,
+.exec-panel,
+.policy-callout,
+.topic-card,
+.tier,
+.drill-card,
+.taxonomy-card,
+.stat-block,
+.coop-aside,
+.data-path,
+.partner-band,
+.partner-row,
+.page-toc,
+.price-hero,
+.rate-table-wrap,
+.rate-disclaimer,
+.steps li {
+  color: var(--ink);
+}
+
+.section:not(.section-van):not(.section-model):not(.section-join) p,
+.section:not(.section-van):not(.section-model):not(.section-join) li,
+.offer-strip p,
+.section-product p,
+.section-product li,
+.exec-panel p,
+.policy-callout p,
+.topic-card p,
+.tier p,
+.drill-card p,
+.taxonomy-card p,
+.taxonomy-card li,
+.stat-block .stat-label,
+.coop-aside p,
+.data-path p,
+.partner-band p,
+.partner-row p,
+.page-toc,
+.price-hero p,
+.rate-disclaimer,
+.rate-table td,
+.steps li,
+.lead,
+.attr-note,
+.rate-note,
+.tier-note,
+.product-figure figcaption {
+  color: var(--ink-soft);
+}
+
+.section:not(.section-van):not(.section-model):not(.section-join) h2,
+.section:not(.section-van):not(.section-model):not(.section-join) h3,
+.offer-strip h2,
+.section-product h2,
+.exec-panel h3,
+.policy-callout h3,
+.topic-card h3,
+.tier h3,
+.drill-card h3,
+.taxonomy-card h3,
+.coop-aside h3,
+.data-path h3 {
+  color: var(--teal);
+}
+
+.stat-block .stat-num,
+.offer-price,
+.tier-price strong,
+.rate-num,
+.topic-go {
+  color: var(--copper);
+}
+
+.section:not(.section-van):not(.section-model):not(.section-join) a:not(.btn),
+.offer-strip a:not(.btn),
+.section-product a:not(.btn),
+.exec-panel a:not(.btn),
+.policy-callout a:not(.btn),
+.coop-aside a:not(.btn),
+.data-path a:not(.btn),
+.partner-band a:not(.btn),
+.page-toc a,
+.product-figure a {
+  color: var(--teal-mid);
 }
 
 @media (max-width: 860px) {

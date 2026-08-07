@@ -21,7 +21,7 @@
 
   const isActive = (item) => item.keys.includes(path);
 
-  const logoMark = `<img class="logo-ar" src="assets/arkansas-logo.svg" width="40" height="35" alt="" />`;
+  const logoMark = `<img class="logo-ar" src="assets/arkansas-logo-dark.svg" width="40" height="35" alt="" />`;
 
   const headerEl = document.querySelector("[data-site-header]");
   if (headerEl) {
