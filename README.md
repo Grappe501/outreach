@@ -2,30 +2,32 @@
 
 Static marketing site for the Arkansas Campaign Data Cooperative.
 
+Communications platform: **[Electd](https://www.electd.io/)**
+
 ## Pages
 
 | Page | Purpose |
 |------|---------|
-| `index.html` | Main pitch, cooperative data model, join form |
-| `platform.html` | Sell Raw/Platform — **$125/month**, no contract |
-| `managed.html` | Sell Managed communications (floor sample rates) |
-| `pricing.html` | Sample rate card: Raw vs Managed |
+| `index.html` | Main pitch, Electd intro, cooperative data model, join form |
+| `platform.html` | Electd platform — **$149/month**, no contract |
+| `managed.html` | Managed communications (full-service email/SMS) |
+| `pricing.html` | Electd quoted rates vs managed full-service |
 
-## Sample pricing (provisional)
+## Quoted Electd pricing
 
-**Platform:** $125/month · no contract · SOS data + campaign-provided contacts · usage billed separately
+**Platform:** $149/month · no contract · cancel anytime  
+Includes: voter data, list building, canvassing, phone banking, direct mail tools
 
-**Data Cooperative:** separate one-time contributions (see homepage); optional enhanced statewide file
+| Channel | Electd / platform | Managed full-service |
+|---------|-------------------|----------------------|
+| Email | $0.0144 / verified email | $0.015 / contact |
+| SMS | $0.025 / verified text | $0.028 / text |
+| Voice | $0.04 / minute after connection | + managed coordination |
+| Direct mail | $0.70 / mailer (print & postage) | + managed list/creative |
 
-| Channel | Raw / platform | Managed (low end) |
-|---------|----------------|-------------------|
-| Email | $0.00125/email | $0.015/contact |
-| SMS | $0.018/segment | $0.028/text |
-| MMS | $0.04/message | $0.05/message |
-| Direct mail 6×9 | — | $0.35/piece delivered |
-| Larger mail | — | $0.55/piece delivered |
+**Data Cooperative:** separate optional one-time contributions (see homepage)
 
-These are sample market-aligned starting points. Final rates will be set before launch.
+Product imagery is loaded from [electd.io](https://www.electd.io/) with attribution.
 
 ## Local preview
 
@@ -35,20 +37,12 @@ npx --yes serve .
 
 ## GitHub + Netlify
 
-Repo: [Grappe501/outreach](https://github.com/Grappe501/outreach)
+Repo: [Grappe501/outreach](https://github.com/Grappe501/outreach)  
+Live: https://outreach-ar.netlify.app
 
-1. Push this folder as the repo root.
-2. Netlify: import the repo; leave build command blank; publish directory = `/`.
-3. Form submissions appear under **Forms** (`cooperative-interest`).
+Push to `main` auto-deploys. Publish directory = `/` (no build command).
 
 ## Forms
 
-Intents on the join form:
-
-- Request Information
-- Platform ($125/mo)
-- Managed Services
-- Reserve Cooperative Pricing
-- Schedule a Demonstration
-
-Deep links: `index.html?intent=platform#join` or `?intent=managed#join`
+Intents: info · platform · managed · reserve · demo  
+Deep links: `index.html?intent=platform#join`

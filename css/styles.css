@@ -954,6 +954,88 @@ li {
   margin-top: 0;
 }
 
+.section-product {
+  padding-top: clamp(2rem, 5vw, 3rem);
+}
+
+.product-figure {
+  margin: 1.5rem 0 2rem;
+}
+
+.product-figure img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  background: #0a221e;
+}
+
+.product-figure figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.partner-row {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.partner-logo {
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+  flex-shrink: 0;
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 0.35rem;
+}
+
+.brand-link {
+  color: #f0b089;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.brand-link:hover {
+  color: #fff;
+}
+
+.feature-blocks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.75rem;
+  margin: 2rem 0 2.5rem;
+}
+
+.feature-blocks article {
+  padding-top: 1rem;
+  border-top: 2px solid var(--teal);
+}
+
+.feature-blocks h3 {
+  margin-top: 0;
+  color: var(--teal);
+}
+
+.attr-note {
+  margin-top: 2rem;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+
+.footer-powered {
+  margin: 0.35rem 0 0;
+  font-size: 0.95rem;
+}
+
+.footer-powered a {
+  color: #cfe4de;
+}
+
 .footer-nav {
   display: flex;
   flex-wrap: wrap;
@@ -1019,7 +1101,8 @@ li {
   .feature-list.two-col,
   .tier-grid,
   .form-grid,
-  .offer-grid {
+  .offer-grid,
+  .feature-blocks {
     grid-template-columns: 1fr;
   }
 
