@@ -25,7 +25,14 @@ Includes: voter data, list building, canvassing, phone banking, direct mail tool
 | Voice | $0.04 / minute after connection | + managed coordination |
 | Direct mail | $0.70 / mailer (print & postage) | + managed list/creative |
 
-**Data Cooperative:** separate optional one-time contributions (see homepage)
+## Cooperative data contributions (one-time)
+
+| Participant | Contribution |
+|-------------|--------------|
+| Local (JP / smaller than county) | $200 |
+| County organization | $300 |
+| State House / State Senate | $500 |
+| Statewide | $700 |
 
 Product imagery is loaded from [electd.io](https://www.electd.io/) with attribution.
 
@@ -40,9 +47,4 @@ npx --yes serve .
 Repo: [Grappe501/outreach](https://github.com/Grappe501/outreach)  
 Live: https://outreach-ar.netlify.app
 
-Push to `main` auto-deploys. Publish directory = `/` (no build command).
-
-## Forms
-
-Intents: info · platform · managed · reserve · demo  
-Deep links: `index.html?intent=platform#join`
+Push to `main` auto-deploys.

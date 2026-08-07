@@ -237,6 +237,12 @@
 
         <div class="tier-grid">
           <article class="tier">
+            <h3>Local races</h3>
+            <p class="tier-price"><strong>$200</strong> one-time data contribution</p>
+            <p>Justice of the Peace and other races smaller than a county. Receive enhanced information for the relevant local geography.</p>
+            <p class="tier-note">Plus <strong>$149 per month</strong> for campaigns using the Electd communications platform.</p>
+          </article>
+          <article class="tier">
             <h3>County organizations</h3>
             <p class="tier-price"><strong>$300</strong> one-time data contribution</p>
             <p>Counties can receive the enhanced information for their county and use it to improve their own records and existing organizing systems.</p>
@@ -245,11 +251,6 @@
           <article class="tier">
             <h3>State House and State Senate</h3>
             <p class="tier-price"><strong>$500</strong> one-time data contribution</p>
-            <p>Plus <strong>$149 per month</strong> for campaigns using the Electd communications platform.</p>
-          </article>
-          <article class="tier">
-            <h3>Congressional campaigns</h3>
-            <p class="tier-price"><strong>$600</strong> one-time data contribution</p>
             <p>Plus <strong>$149 per month</strong> for campaigns using the Electd communications platform.</p>
           </article>
           <article class="tier">
@@ -272,16 +273,16 @@
             <p>That covers more than 60% of the statewide data acquisition.</p>
           </div>
           <div class="math-block">
-            <p class="math-if">If all four congressional campaigns and three statewide campaigns participate:</p>
-            <p class="math-eq"><strong>4 congressional × $600 = $2,400</strong></p>
+            <p class="math-if">If three statewide campaigns and ten local races participate:</p>
             <p class="math-eq"><strong>3 statewide × $700 = $2,100</strong></p>
+            <p class="math-eq"><strong>10 local races × $200 = $2,000</strong></p>
             <p>That brings the cooperative total to:</p>
-            <p class="math-total">$19,500</p>
+            <p class="math-total">$19,100</p>
           </div>
           <div class="math-block">
-            <p>Only nine State House or State Senate campaigns would then be needed to complete the purchase:</p>
-            <p class="math-eq"><strong>9 legislative campaigns × $500 = $4,500</strong></p>
-            <p class="math-grand">Total: $24,000</p>
+            <p>Only ten State House or State Senate campaigns would then be needed to complete the purchase:</p>
+            <p class="math-eq"><strong>10 legislative campaigns × $500 = $5,000</strong></p>
+            <p class="math-grand">Total: $24,100</p>
           </div>
         </div>
 
@@ -292,7 +293,7 @@
     <section id="receive" class="section section-receive">
       <div class="section-inner">
         <h2>What participants receive</h2>
-        <p class="lead">Participants receive access to the portion of the enhanced data appropriate for their campaign, district, county, or statewide jurisdiction, subject to the final vendor licensing agreement.</p>
+        <p class="lead">Participants receive access to the portion of the enhanced data appropriate for their campaign, district, county, local geography, or statewide jurisdiction, subject to the final vendor licensing agreement.</p>
         <p>They can use the information to:</p>
         <ul class="feature-list two-col">
           <li>Improve voter-contact records</li>
@@ -405,9 +406,9 @@
               <span>Participant type</span>
               <select name="participant_type" required>
                 <option value="">Select one</option>
+                <option value="local">Local race (JP / smaller than county)</option>
                 <option value="county">County organization</option>
                 <option value="legislative">State House / State Senate</option>
-                <option value="congressional">Congressional</option>
                 <option value="statewide">Statewide</option>
                 <option value="other">Other / exploring</option>
               </select>
