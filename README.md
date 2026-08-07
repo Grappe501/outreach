@@ -1,25 +1,29 @@
 # Arkansas Campaign Data Cooperative
 
-Multi-page marketing site. Platform: [Electd](https://www.electd.io/). Enhanced data: [L2 Data](https://l2-data.com/).
+Institutional multi-page site for Arkansas campaigns.
+
+- Platform: [Electd](https://www.electd.io/)
+- Enhanced data: [L2 Data](https://l2-data.com/)
 
 ## Site map
 
 | Page | Purpose |
 |------|---------|
-| `index.html` | Short landing + topic cards |
-| `problem.html` | Organizing problem |
-| `data.html` | L2 enhanced data deep dive |
-| `platform.html` | Electd platform ($149/mo) |
-| `managed.html` | Managed outreach |
-| `pricing.html` | Electd vs managed rates |
-| `cooperative.html` | Cooperative tiers + funding math |
-| `van.html` | VAN / existing tools |
-| `privacy.html` | Private campaign contacts |
-| `how-it-works.html` | End-to-end path |
-| `join.html` | Netlify interest form |
+| `index.html` | Executive landing + Arkansas map brand mark |
+| `data.html` | L2 field architecture / dictionary summary |
+| `models.html` | HaystaqDNA 160+ models |
+| `cooperative.html` | Contribution **minimums** + metro 50k rule |
+| `platform.html` | Electd $149/mo |
+| `managed.html` / `pricing.html` | Outreach rates |
+| `problem.html` / `van.html` / `privacy.html` / `how-it-works.html` | Supporting briefs |
+| `join.html` | Interest form |
 
-Shared chrome: `js/site-chrome.js` (nav/footer).
+## Assets
+
+- `assets/arkansas-logo.svg` — AR outline + town pins
+- `assets/L2-Voter-Data-Dictionary.pdf`
+- `assets/L2-Haystaq-Model-List.pdf`
 
 ## Live
 
-https://outreach-ar.netlify.app · [Grappe501/outreach](https://github.com/Grappe501/outreach)
+https://outreach-ar.netlify.app

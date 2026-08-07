@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>L2 Enhanced Data | Arkansas Campaign Data Cooperative</title>
-  <meta name="description" content="Arkansas cooperative access to L2 enhanced voter and consumer data—phones, emails, mailing lists, attributes, and mapping—sourced from L2 Data." />
+  <title>L2 Data Architecture | Arkansas Campaign Data Cooperative</title>
+  <meta name="description" content="Deep dive into L2 voter file fields, contact intelligence, districts, wealth, donors, HaystaqDNA models—and how the Arkansas cooperative uses them." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
@@ -19,13 +19,13 @@
     <section class="page-hero">
       <div class="section-inner">
         <p class="breadcrumb"><a href="index.html">Home</a> / L2 Data</p>
-        <p class="brand-lockup">Enhanced statewide data · sourced from <a class="brand-link" href="https://l2-data.com/" rel="noopener noreferrer" target="_blank">L2 Data</a></p>
-        <h1>Trusted voter and consumer data at your fingertips.</h1>
-        <p class="hero-lede">If the cooperative funds the purchase, Arkansas participants get jurisdiction-appropriate access to professionally enhanced records from <a href="https://l2-data.com/" rel="noopener noreferrer" target="_blank">L2</a>—the vendor behind national voter and consumer files used for accurate targeting.</p>
+        <p class="brand-lockup">Enhanced statewide intelligence · <a class="brand-link" href="https://l2-data.com/" rel="noopener noreferrer" target="_blank">L2 Data</a></p>
+        <h1>Hundreds of fields. One cooperative purchase.</h1>
+        <p class="hero-lede">For over 50 years, L2 has been the gold standard for voter contact and targeting information. If the cooperative funds acquisition, Arkansas participants receive jurisdiction-appropriate access to this enhanced architecture—subject to final licensing.</p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="cooperative.html">See cooperative pricing</a>
-          <a class="btn btn-secondary" href="https://l2-data.com/" rel="noopener noreferrer" target="_blank">Visit L2 Data</a>
-          <a class="btn btn-ghost" href="join.html?intent=reserve">Reserve cooperative pricing</a>
+          <a class="btn btn-primary" href="cooperative.html">Contribution minimums</a>
+          <a class="btn btn-secondary" href="assets/L2-Voter-Data-Dictionary.pdf">Data dictionary PDF</a>
+          <a class="btn btn-ghost" href="https://l2-data.com/" rel="noopener noreferrer" target="_blank">Visit L2</a>
         </div>
       </div>
     </section>
@@ -35,164 +35,176 @@
         <nav class="page-toc" aria-label="On this page">
           <strong>On this page</strong>
           <ol>
-            <li><a href="#why-l2">Why L2</a></li>
-            <li><a href="#attributes">Data attributes</a></li>
-            <li><a href="#touchpoints">Contact lists &amp; touchpoints</a></li>
-            <li><a href="#workflow">How using the data works</a></li>
-            <li><a href="#quality">Accuracy, hygiene &amp; mapping</a></li>
-            <li><a href="#arkansas">What Arkansas campaigns receive</a></li>
+            <li><a href="#scale">National scale</a></li>
+            <li><a href="#dictionary">Voter file taxonomy</a></li>
+            <li><a href="#contact">Contact &amp; location</a></li>
+            <li><a href="#models">Predictive layer</a></li>
+            <li><a href="#workflow">L2 workflow</a></li>
+            <li><a href="#arkansas">Arkansas cooperative use</a></li>
           </ol>
         </nav>
-
         <div class="partner-band">
           <img src="https://l2-data.com/wp-content/uploads/2021/11/L2-Logo-160.png" alt="L2 Data" width="140" height="48" />
-          <p>Product claims below summarize L2’s public positioning. Full detail always lives on <a href="https://l2-data.com/" rel="noopener noreferrer" target="_blank">l2-data.com</a>.</p>
+          <p>Field names and product claims summarize L2’s public data dictionary and marketing. Authoritative detail: <a href="https://l2-data.com/" rel="noopener noreferrer" target="_blank">l2-data.com</a>.</p>
         </div>
       </div>
     </section>
 
-    <section id="why-l2" class="section section-problem">
+    <section id="scale" class="section section-problem">
       <div class="section-inner">
-        <h2>Why L2</h2>
-        <p class="lead">For over 50 years, L2 has been a trusted source for enhanced voter, consumer, and constituent data. Their national voter file is positioned as accurate, frequently updated, and rich in segments for traditional and digital targeting.</p>
-        <p>L2 aggregates many data sources into an ecosystem for selecting, analyzing, and micro-targeting the voters you need to reach—faster. Access is web-based; no desktop software install is required.</p>
+        <h2>National scale, Arkansas application</h2>
         <div class="stats-row">
-          <div class="stat-block">
-            <p class="stat-num">217M+</p>
-            <p class="stat-label">Voter data records (national)</p>
-          </div>
-          <div class="stat-block">
-            <p class="stat-num">260M+</p>
-            <p class="stat-label">Consumer data records</p>
-          </div>
-          <div class="stat-block">
-            <p class="stat-num">50+</p>
-            <p class="stat-label">Years of data specialization</p>
-          </div>
+          <div class="stat-block"><p class="stat-num">217M+</p><p class="stat-label">Voter records (national)</p></div>
+          <div class="stat-block"><p class="stat-num">260M+</p><p class="stat-label">Consumer records</p></div>
+          <div class="stat-block"><p class="stat-num">~1.6M</p><p class="stat-label">Arkansas cooperative target file</p></div>
         </div>
-        <div class="source-links">
-          <a class="btn btn-outline" href="https://l2-data.com/voter-data/" rel="noopener noreferrer" target="_blank">L2 Voter Data</a>
-          <a class="btn btn-outline" href="https://l2-data.com/consumer-data/" rel="noopener noreferrer" target="_blank">L2 Consumer Data</a>
-          <a class="btn btn-outline" href="https://l2-data.com/constituent-data/" rel="noopener noreferrer" target="_blank">L2 Constituent Data</a>
-          <a class="btn btn-outline" href="https://l2-data.com/datamapping/" rel="noopener noreferrer" target="_blank">L2 DataMapping</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="attributes" class="section section-foundation">
-      <div class="section-inner">
-        <h2>Data attributes</h2>
-        <p class="lead">Get more than basic demographics. L2 lets organizations refine universes with demographic, psychographic, and behavioral attributes.</p>
         <div class="stats-row">
-          <div class="stat-block">
-            <p class="stat-num">800+</p>
-            <p class="stat-label">Consumer data attributes</p>
-          </div>
-          <div class="stat-block">
-            <p class="stat-num">400</p>
-            <p class="stat-label">Demographic fields</p>
-          </div>
-          <div class="stat-block">
-            <p class="stat-num">91</p>
-            <p class="stat-label">Predictive data fields</p>
-          </div>
+          <div class="stat-block"><p class="stat-num">800+</p><p class="stat-label">Consumer attributes</p></div>
+          <div class="stat-block"><p class="stat-num">400</p><p class="stat-label">Demographic fields</p></div>
+          <div class="stat-block"><p class="stat-num">160+</p><p class="stat-label">HaystaqDNA models</p></div>
         </div>
-        <div class="drill-grid">
-          <article class="drill-card">
-            <h3>Enhanced data</h3>
-            <p>L2’s file includes 600+ fields of demographic, consumer, and other variables to narrow selection beyond a bare voter roll.</p>
-          </article>
-          <article class="drill-card">
-            <h3>Geographic segments</h3>
-            <p>Select by state, city, ZIP, district, and more—pull contact lists or review selections with mapping.</p>
-          </article>
-        </div>
-        <p><a href="https://l2-data.com/" rel="noopener noreferrer" target="_blank">Read L2’s attribute overview →</a></p>
+        <p class="lead">L2 aggregates sources into a web-based ecosystem for selecting, analyzing, and micro-targeting—no desktop install required.</p>
       </div>
     </section>
 
-    <section id="touchpoints" class="section section-platform">
+    <section id="dictionary" class="section section-foundation">
       <div class="section-inner">
-        <h2>L2 makes every touchpoint count</h2>
-        <p class="lead">Contact lists for the channels campaigns actually use:</p>
+        <h2>Voter file taxonomy</h2>
+        <p class="lead">From L2’s voter data dictionary—hundreds of fields to find target voters:</p>
+        <div class="taxonomy-grid">
+          <article class="taxonomy-card">
+            <h3>Identity &amp; registration</h3>
+            <p>LALVOTERID, state/county IDs, name, gender, age, birth date confidence, place of birth, veteran, active/inactive, registration dates, party &amp; party switcher, progressive/moderate/conservative flags.</p>
+          </article>
+          <article class="taxonomy-card">
+            <h3>Contact &amp; location</h3>
+            <p>Cell, landline, residence &amp; mailing addresses with CASS codes, lat/long accuracy, Do Not Call, walk-list zig-zag/odd-even, time zone, urbanicity, population density.</p>
+          </article>
+          <article class="taxonomy-card">
+            <h3>Districts</h3>
+            <p>County, precinct, U.S. House, state house/senate, municipalities, school/college/judicial/special districts, fire/hospital/police, utility, flood, and more.</p>
+          </article>
+          <article class="taxonomy-card">
+            <h3>Household demographics</h3>
+            <p>Head of household, religion, marital status, adults/children counts, disabled/senior/young adult flags, household parties, ethnic coding, language proficiency.</p>
+          </article>
+          <article class="taxonomy-card">
+            <h3>Voting history</h3>
+            <p>All election levels, frequency, early/absentee history, performance, absentee type—plus mover history across districts and prior performance.</p>
+          </article>
+          <article class="taxonomy-card">
+            <h3>Wealth &amp; finance</h3>
+            <p>Income, net worth, credit rating (modeled), CRA class, credit cards, investor flags, FEC donor history and amounts.</p>
+          </article>
+          <article class="taxonomy-card">
+            <h3>Property &amp; housing</h3>
+            <p>Purchase year/price, estimated &amp; assessed value, mortgage, dwelling type, square footage, bedrooms, pool, owner flags.</p>
+          </article>
+          <article class="taxonomy-card">
+            <h3>Donors &amp; philanthropy</h3>
+            <p>Charitable, political, religious, environmental, health, arts, and cause-specific donor indicators.</p>
+          </article>
+          <article class="taxonomy-card">
+            <h3>Lifestyle &amp; interests</h3>
+            <p>Sports, travel, food, apparel, media consumption, DIY, tech early adopter, upscale/common living groups.</p>
+          </article>
+          <article class="taxonomy-card">
+            <h3>Automotive</h3>
+            <p>In-market car, make/model/year, motorcycle make/model, work spender flags.</p>
+          </article>
+          <article class="taxonomy-card">
+            <h3>Census &amp; statistical areas</h3>
+            <p>DMA, tract/block group/block, CSA/CBSA/MSA, area % children/married/Spanish-speaking, median income &amp; education, social ranking indices.</p>
+          </article>
+          <article class="taxonomy-card">
+            <h3>Digital identifiers</h3>
+            <p>MAID (mobile ad ID), IP, and verified emails (highly cleaned; often purchased separately from standard taxonomy).</p>
+          </article>
+        </div>
+        <div class="doc-links">
+          <a class="btn btn-outline" href="assets/L2-Voter-Data-Dictionary.pdf">Full L2 voter data dictionary (PDF)</a>
+          <a class="btn btn-outline" href="https://l2-data.com/voter-data/" rel="noopener noreferrer" target="_blank">L2 voter data product</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-platform">
+      <div class="section-inner">
+        <h2>Every touchpoint</h2>
+        <p class="lead">L2 positions contact lists for the channels campaigns actually run:</p>
         <ul class="feature-list two-col">
           <li>Phone lists</li>
           <li>Email lists</li>
           <li>Text lists</li>
           <li>Mailing lists</li>
           <li>Canvassing / walking lists</li>
-          <li>Digital targeting segments</li>
+          <li>Digital targeting</li>
         </ul>
-        <p>That is the same gap Arkansas campaigns feel today: missing mobiles, incomplete emails, and outdated addresses. Enhanced L2 fields are meant to close those gaps where available.</p>
-        <p><a href="problem.html">See the organizing problem →</a></p>
+        <p>That directly addresses Arkansas’ operational pain: missing mobiles, incomplete emails, and stale addresses. <a href="problem.html">See the problem brief →</a></p>
       </div>
     </section>
 
-    <section id="workflow" class="section">
+    <section id="models" class="section">
       <div class="section-inner">
-        <h2>Using L2 data is straightforward</h2>
-        <p class="lead">L2 describes a four-step workflow for turning hundreds of millions of records into usable lists:</p>
-        <ol class="steps">
-          <li><strong>Define your universe</strong> Choose filters across demographic, voter, consumer, and modeled behaviors.</li>
-          <li><strong>Pull counts and analyze</strong> Compare criteria across districts and view selections geographically.</li>
-          <li><strong>Solidify your selection</strong> Use mapping to cut turf and confirm counts.</li>
-          <li><strong>Export your records</strong> Download contact lists (Excel, CSV, or DBF) and engage.</li>
-        </ol>
-        <p>Arkansas cooperative participants receive the portion of enhanced data appropriate to their jurisdiction, subject to the final vendor licensing agreement—and can use it to improve VAN, Electd, or internal databases.</p>
-        <div class="source-links">
-          <a class="btn btn-outline" href="https://l2-data.com/" rel="noopener noreferrer" target="_blank">L2 homepage</a>
-          <a class="btn btn-outline" href="https://l2-data.com/states/" rel="noopener noreferrer" target="_blank">State voter records</a>
-          <a class="btn btn-outline" href="van.html">How this helps VAN</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="quality" class="section section-problem">
-      <div class="section-inner">
-        <h2>Accuracy, hygiene &amp; mapping</h2>
+        <h2>Predictive layer</h2>
         <div class="drill-grid">
           <article class="drill-card">
-            <h3>Data accuracy</h3>
-            <p>L2 emphasizes screening for inaccuracies with trained experts and proprietary algorithms—because decisions are only as good as the file.</p>
+            <h3>HaystaqDNA models</h3>
+            <p>Hundreds of issue, behavior, and candidate flags/scores (0–100) beyond the standard L2 taxonomy. <a href="models.html">Open models brief →</a></p>
           </article>
           <article class="drill-card">
-            <h3>Processing &amp; hygiene</h3>
-            <p>L2 applies proprietary processing to high-quality consumer databases. See <a href="https://l2-data.com/data-hygiene/" rel="noopener noreferrer" target="_blank">L2 Data Hygiene</a>.</p>
+            <h3>Causeway viewership models</h3>
+            <p>L2 also references viewership &amp; issue models (e.g., streaming platforms) for additional targeting dimensions.</p>
           </article>
           <article class="drill-card">
-            <h3>Mapping</h3>
-            <p>Map counts and percentages to see granularity before you spend on mail or phones. Explore <a href="https://l2-data.com/datamapping/" rel="noopener noreferrer" target="_blank">DataMapping</a>.</p>
+            <h3>Verified emails</h3>
+            <p>Highly cleaned, up-to-date emails for direct outreach and identity resolution / digital matching.</p>
           </article>
           <article class="drill-card">
-            <h3>Customization</h3>
-            <p>Standard delivery is tab-delimited and nationwide-standardized; L2 can deliver alternate formats when required.</p>
+            <h3>National consumer database</h3>
+            <p>All-adults consumer insights for DTC marketing, research, and analytics layered onto voter universes.</p>
           </article>
         </div>
-        <figure class="product-figure">
-          <img src="https://l2-data.com/wp-content/uploads/2021/10/Infographic-Data-Accuracy-edited.png" alt="L2 data accuracy infographic" width="1000" height="600" loading="lazy" />
-          <figcaption>Imagery from <a href="https://l2-data.com/" rel="noopener noreferrer" target="_blank">l2-data.com</a>.</figcaption>
-        </figure>
+        <a class="btn btn-outline" href="assets/L2-Haystaq-Model-List.pdf">Haystaq model list PDF</a>
+      </div>
+    </section>
+
+    <section id="workflow" class="section section-problem">
+      <div class="section-inner">
+        <h2>Using L2 data</h2>
+        <ol class="steps">
+          <li><strong>Define your universe</strong> Filters across demographic, voter, consumer, and modeled behaviors.</li>
+          <li><strong>Pull counts and analyze</strong> Compare criteria across districts; view geographically.</li>
+          <li><strong>Solidify selection</strong> Mapping to cut turf and confirm counts.</li>
+          <li><strong>Export records</strong> Excel, CSV, or DBF—then engage via Electd, VAN, or managed programs.</li>
+        </ol>
+        <div class="source-links">
+          <a class="btn btn-outline" href="https://l2-data.com/datamapping/" rel="noopener noreferrer" target="_blank">L2 DataMapping</a>
+          <a class="btn btn-outline" href="https://l2-data.com/data-hygiene/" rel="noopener noreferrer" target="_blank">Data hygiene</a>
+          <a class="btn btn-outline" href="https://l2-data.com/states/" rel="noopener noreferrer" target="_blank">State voter records</a>
+        </div>
       </div>
     </section>
 
     <section id="arkansas" class="section section-foundation">
       <div class="section-inner">
-        <h2>What Arkansas campaigns receive</h2>
-        <p class="lead">We are working to acquire a professionally enhanced Arkansas voter and consumer file (~1.6 million records) through L2, funded by the cooperative—not by any single campaign alone.</p>
-        <p>Where available, enhanced fields typically include verified emails, mobile/text-capable numbers, telephone numbers, current mailing addresses, registration and district information, and additional contact attributes useful for outreach.</p>
-        <ul class="feature-list">
-          <li>Improve voter-contact records and reduce wasted calls/texts/mail</li>
-          <li>Strengthen matching into VAN or other organizing systems</li>
-          <li>Feed cleaner universes into <a href="platform.html">Electd</a> for self-serve or <a href="managed.html">managed</a> programs</li>
-          <li>Keep campaign-owned contacts private—see <a href="privacy.html">private contacts</a></li>
-        </ul>
-        <p><strong>Without cooperative purchase:</strong> campaigns still use Electd with SOS registration data plus records they provide. L2 enhanced data is the optional upgrade.</p>
-        <div class="source-links">
-          <a class="btn btn-primary" href="cooperative.html">Cooperative contributions</a>
-          <a class="btn btn-outline" href="join.html?intent=reserve">Reserve pricing</a>
-          <a class="btn btn-outline" href="https://l2-data.com/contact-us/" rel="noopener noreferrer" target="_blank">Contact L2 directly</a>
+        <h2>Arkansas cooperative use</h2>
+        <p class="lead">We are working to acquire a professionally enhanced Arkansas voter and consumer file (~1.6 million records) through L2, funded by cooperative minimums—not by any single campaign alone.</p>
+        <div class="policy-callout">
+          <h3>Contribution minimums apply</h3>
+          <p>Published cooperative amounts are <strong>minimums</strong>. If you can contribute more, please do. Local races in metro areas of <strong>50,000+</strong> pay the <strong>county minimum ($300)</strong>.</p>
+          <p><a href="cooperative.html#minimums">Read full policy →</a></p>
         </div>
-        <p class="attr-note">L2 product names, statistics, and imagery © <a href="https://l2-data.com/" rel="noopener noreferrer" target="_blank">L2, Inc.</a> Arkansas Campaign Data Cooperative is an Arkansas packaging and purchasing effort, not an L2 affiliate page.</p>
+        <ul class="feature-list">
+          <li>Improve phones, emails, and addresses feeding <a href="platform.html">Electd</a> and <a href="van.html">VAN</a></li>
+          <li>Apply Haystaq scores for persuasion, turnout, and channel strategy</li>
+          <li>Keep campaign-owned contacts firewalled — <a href="privacy.html">privacy</a></li>
+        </ul>
+        <div class="source-links">
+          <a class="btn btn-primary" href="join.html?intent=reserve">Reserve cooperative pricing</a>
+          <a class="btn btn-outline" href="https://l2-data.com/contact-us/" rel="noopener noreferrer" target="_blank">Contact L2</a>
+        </div>
+        <p class="attr-note">L2 product names, statistics, field taxonomy, and imagery © <a href="https://l2-data.com/" rel="noopener noreferrer" target="_blank">L2, Inc.</a> Arkansas Campaign Data Cooperative packages cooperative purchasing for Arkansas participants.</p>
       </div>
     </section>
   </main>

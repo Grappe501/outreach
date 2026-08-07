@@ -47,7 +47,7 @@
   });
 
   const revealTargets = document.querySelectorAll(
-    ".section h2, .callout, .pull-quote, .tier, .math-block, .price-hero, .join-form, .better-list li, .offer-item, .rate-table-wrap, .coop-aside, .product-figure, .feature-blocks, .topic-card, .stat-block, .drill-card"
+    ".section h2, .callout, .pull-quote, .tier, .math-block, .price-hero, .join-form, .better-list li, .offer-item, .rate-table-wrap, .coop-aside, .product-figure, .feature-blocks, .topic-card, .stat-block, .drill-card, .taxonomy-card, .policy-callout, .exec-panel"
   );
   revealTargets.forEach((el) => el.classList.add("reveal"));
 
