@@ -1,4 +1,19 @@
 (() => {
+  if (!document.querySelector(".site-shell")) {
+    const shell = document.createElement("div");
+    shell.className = "site-shell";
+    const move = [...document.body.children].filter(
+      (el) => !el.classList?.contains("skip-link") && el.tagName !== "SCRIPT"
+    );
+    move.forEach((el) => shell.appendChild(el));
+    const firstScript = document.body.querySelector("script");
+    if (firstScript) {
+      document.body.insertBefore(shell, firstScript);
+    } else {
+      document.body.appendChild(shell);
+    }
+  }
+
   const path = (window.location.pathname.split("/").pop() || "index.html").toLowerCase() || "index.html";
 
   const links = [
