@@ -1,50 +1,25 @@
 # Arkansas Campaign Data Cooperative
 
-Static marketing site for the Arkansas Campaign Data Cooperative.
+Multi-page marketing site. Platform: [Electd](https://www.electd.io/). Enhanced data: [L2 Data](https://l2-data.com/).
 
-Communications platform: **[Electd](https://www.electd.io/)**
-
-## Pages
+## Site map
 
 | Page | Purpose |
 |------|---------|
-| `index.html` | Main pitch, Electd intro, cooperative data model, join form |
-| `platform.html` | Electd platform — **$149/month**, no contract |
-| `managed.html` | Managed communications (full-service email/SMS) |
-| `pricing.html` | Electd quoted rates vs managed full-service |
+| `index.html` | Short landing + topic cards |
+| `problem.html` | Organizing problem |
+| `data.html` | L2 enhanced data deep dive |
+| `platform.html` | Electd platform ($149/mo) |
+| `managed.html` | Managed outreach |
+| `pricing.html` | Electd vs managed rates |
+| `cooperative.html` | Cooperative tiers + funding math |
+| `van.html` | VAN / existing tools |
+| `privacy.html` | Private campaign contacts |
+| `how-it-works.html` | End-to-end path |
+| `join.html` | Netlify interest form |
 
-## Quoted Electd pricing
+Shared chrome: `js/site-chrome.js` (nav/footer).
 
-**Platform:** $149/month · no contract · cancel anytime  
-Includes: voter data, list building, canvassing, phone banking, direct mail tools
+## Live
 
-| Channel | Electd / platform | Managed full-service |
-|---------|-------------------|----------------------|
-| Email | $0.0144 / verified email | $0.015 / contact |
-| SMS | $0.025 / verified text | $0.028 / text |
-| Voice | $0.04 / minute after connection | + managed coordination |
-| Direct mail | $0.70 / mailer (print & postage) | + managed list/creative |
-
-## Cooperative data contributions (one-time)
-
-| Participant | Contribution |
-|-------------|--------------|
-| Local (JP / smaller than county) | $200 |
-| County organization | $300 |
-| State House / State Senate | $500 |
-| Statewide | $700 |
-
-Product imagery is loaded from [electd.io](https://www.electd.io/) with attribution.
-
-## Local preview
-
-```bash
-npx --yes serve .
-```
-
-## GitHub + Netlify
-
-Repo: [Grappe501/outreach](https://github.com/Grappe501/outreach)  
-Live: https://outreach-ar.netlify.app
-
-Push to `main` auto-deploys.
+https://outreach-ar.netlify.app · [Grappe501/outreach](https://github.com/Grappe501/outreach)

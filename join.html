@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Join / Request Information | Arkansas Campaign Data Cooperative</title>
+  <meta name="description" content="Request information, platform access, managed services, cooperative pricing, or a demonstration." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div data-site-header></div>
+  <div class="subnav" data-subnav></div>
+
+  <main id="main">
+    <section id="join" class="section section-join" style="padding-top:clamp(3rem,8vw,5rem)">
+      <div class="section-inner">
+        <div class="join-intro">
+          <p class="brand-lockup">Join the Arkansas Campaign Data Cooperative</p>
+          <h2>Better data. Private campaign contacts. Affordable communication. Stronger organizing.</h2>
+        </div>
+
+        <form class="join-form" name="cooperative-interest" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="cooperative-interest" />
+          <p class="honeypot" hidden>
+            <label>Don’t fill this out: <input name="bot-field" /></label>
+          </p>
+
+          <fieldset class="intent-field">
+            <legend>I’m interested in</legend>
+            <label class="chip"><input type="radio" name="intent" value="info" checked /><span>Request Information</span></label>
+            <label class="chip"><input type="radio" name="intent" value="platform" /><span>Platform ($149/mo)</span></label>
+            <label class="chip"><input type="radio" name="intent" value="managed" /><span>Managed Services</span></label>
+            <label class="chip"><input type="radio" name="intent" value="reserve" /><span>Reserve Cooperative Pricing</span></label>
+            <label class="chip"><input type="radio" name="intent" value="demo" /><span>Schedule a Demonstration</span></label>
+          </fieldset>
+
+          <div class="form-grid">
+            <label><span>Full name</span><input type="text" name="name" required autocomplete="name" /></label>
+            <label><span>Email</span><input type="email" name="email" required autocomplete="email" /></label>
+            <label><span>Phone</span><input type="tel" name="phone" autocomplete="tel" /></label>
+            <label><span>Organization / campaign</span><input type="text" name="organization" required /></label>
+            <label>
+              <span>Participant type</span>
+              <select name="participant_type" required>
+                <option value="">Select one</option>
+                <option value="local">Local race (JP / smaller than county)</option>
+                <option value="county">County organization</option>
+                <option value="legislative">State House / State Senate</option>
+                <option value="statewide">Statewide</option>
+                <option value="other">Other / exploring</option>
+              </select>
+            </label>
+            <label><span>County or district</span><input type="text" name="jurisdiction" placeholder="e.g. Pulaski County, HD-32" /></label>
+            <label class="full"><span>Message (optional)</span><textarea name="message" rows="4" placeholder="Platform, managed outreach, L2 cooperative data, or a demo."></textarea></label>
+          </div>
+
+          <button class="btn btn-primary btn-wide" type="submit">Submit</button>
+          <p class="form-note">Electd $149/mo · Email $0.0144 · SMS $0.025 · Voice $0.04/min · Mail $0.70. Cooperative data is conditional on funding threshold.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div data-site-footer></div>
+  <script src="js/site-chrome.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
