@@ -486,9 +486,11 @@
   /* width set inline */
 }
 
-.funding-meter__updated {
-  font-size: var(--text-label);
-  color: rgba(220, 232, 227, 0.7);
+.funding-meter__surplus {
+  margin: 1rem 0 0;
+  max-width: 40rem;
+  color: var(--text-on-dark-soft);
+  font-size: var(--text-small);
 }
 
 /* Comparison matrix */

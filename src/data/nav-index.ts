@@ -83,7 +83,7 @@ export const navIndex: PaletteItem[] = [
   {
     id: 'funding',
     title: 'Funding progress',
-    description: 'Cooperative commitments vs $24k threshold',
+    description: 'Cooperative commitments vs $24k; surplus reinvests in data',
     href: '/#funding',
     keywords: ['funding', 'progress', 'meter', '24k', 'threshold'],
     group: 'Anchors',
@@ -115,9 +115,9 @@ export const navIndex: PaletteItem[] = [
   {
     id: 'cooperative',
     title: 'Data Cooperative',
-    description: 'Terms, metro rule, and founding purchase',
+    description: 'Terms, metro rule, surplus reinvestment',
     href: '/cooperative/',
-    keywords: ['cooperative', 'terms', 'founding'],
+    keywords: ['cooperative', 'terms', 'founding', 'surplus', 'reinvest'],
     group: 'Pages',
   },
   {

@@ -17,7 +17,7 @@ export const funding = {
   goal: 24_000,
   committed: 8_400,
   updatedLabel: 'Updated manually · Aug 2026',
-  note: 'Acquisition is conditional on funding approximately $24,000 toward the statewide enhanced file.',
+  note: 'Founding acquisition needs about $24,000. After that threshold, the same contribution rates continue—surplus funds reinvest in additional and newer data for the cooperative.',
 } as const;
 
 export const outcomeMetrics = [

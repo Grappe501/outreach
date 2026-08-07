@@ -166,7 +166,15 @@ export const cooperativeFaqSchema = {
       name: 'Is the founding L2 purchase guaranteed?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Acquisition is conditional on funding approximately $24,000 toward the statewide enhanced file. Without cooperative funding, campaigns can still use SOS plus campaign-provided data on Electd.',
+        text: 'The founding statewide enhanced file will not be purchased unless participants collectively cover about $24,000. Without cooperative funding, campaigns can still use SOS plus campaign-provided data on Electd.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens after the cooperative raises more than $24,000?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Contribution rates stay the same. Funds collected beyond the founding purchase are reinvested in additional and newer data for the cooperative.',
       },
     },
   ],

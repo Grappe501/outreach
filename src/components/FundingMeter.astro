@@ -39,9 +39,18 @@ const remainingLabel = remaining.toLocaleString('en-US');
         <div class="funding-meter__fill" style={`width:${pct}%`}></div>
       </div>
       <div class="funding-meter__footer">
-        <p>${remainingLabel} remaining to threshold</p>
+        <p>
+          {
+            remaining > 0
+              ? `$${remainingLabel} remaining to founding threshold`
+              : 'Founding threshold met — same rates continue; surplus reinvests in new data'
+          }
+        </p>
         <p class="funding-meter__updated">{funding.updatedLabel}</p>
       </div>
+      <p class="funding-meter__surplus">
+        Past the $24k purchase, published minimums stay in place. Extra commitments reinvest in more and newer data.
+      </p>
       <div class="cta-row" style="margin-top:1.5rem">
         <a class="btn btn-primary" href="/join/?intent=reserve">Reserve cooperative pricing</a>
         <a class="btn btn-outline" href="/cooperative/#minimums">See contribution minimums</a>
