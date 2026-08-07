@@ -1,0 +1,51 @@
+---
+import PartnerImage from '@/components/PartnerImage.astro';
+import { platformTour } from '@/data/tour';
+---
+
+<section class="section section-tour" id="platform-tour">
+  <div class="section-inner">
+    <p class="kicker">Platform tour</p>
+    <h2>From Ask Electd to Arkansas doors</h2>
+    <p class="lead">
+      Chaptered walkthrough using the Electd workspace we already ship—grounded in published Arkansas rates and
+      cooperative data layers.
+    </p>
+
+    <div class="tour" data-platform-tour>
+      <div class="tour__visual">
+        <PartnerImage variant="electd-preview" loading="lazy" class="product-shot tour__shot" />
+        <p class="tour__credit">
+          Product imagery from <a href="https://www.electd.io/" rel="noopener noreferrer" target="_blank">Electd</a>.
+        </p>
+      </div>
+      <div class="tour__chapters" role="tablist" aria-label="Platform tour chapters">
+        {
+          platformTour.map((chapter, i) => (
+            <button
+              type="button"
+              class:list={['tour__chapter', { 'is-active': i === 0 }]}
+              role="tab"
+              aria-selected={i === 0 ? 'true' : 'false'}
+              data-tour-chapter={chapter.id}
+            >
+              <span class="tour__chapter-num">{String(i + 1).padStart(2, '0')}</span>
+              <span class="tour__chapter-copy">
+                <strong>{chapter.title}</strong>
+                <span>{chapter.body}</span>
+              </span>
+            </button>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="cta-row" style="margin-top:1.5rem">
+      <a class="btn btn-primary" href="/platform/">Full Electd brief</a>
+      <a class="btn btn-outline" href="/pricing/">Usage rates</a>
+      <a class="btn btn-outline" href="https://www.electd.io/" rel="noopener noreferrer" target="_blank">
+        Visit Electd.io
+      </a>
+    </div>
+  </div>
+</section>

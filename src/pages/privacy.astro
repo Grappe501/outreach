@@ -1,40 +1,9 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import BriefLayout from '@/layouts/BriefLayout.astro';
+
+const entry = await getEntry('briefs', 'privacy');
+if (!entry) throw new Error('Missing briefs/privacy content');
 ---
 
-<BaseLayout title="Private Campaign Contacts | Arkansas Campaign Data Cooperative" description="Your campaign contacts remain yours. Supporter IDs, volunteers, donors, and notes stay firewalled—not dumped into a shared statewide pool.">
-<section class="page-hero">
-      <div class="section-inner">
-        <p class="breadcrumb"><a href="/">Home</a> / Private contacts</p>
-        <p class="brand-lockup">Campaign ownership</p>
-        <h1 transition:name="page-title">Your campaign contacts remain your campaign contacts.</h1>
-        <p class="hero-lede">Statewide enhanced data provides a foundation. Each campaign’s organizing work—and private relationships—remain its own.</p>
-      </div>
-    </section>
-
-    <section class="section section-privacy">
-      <div class="section-inner">
-        <p class="lead">Every campaign builds information that belongs to that campaign, including:</p>
-        <ul class="feature-list two-col">
-          <li>Supporter identifications</li>
-          <li>Volunteer relationships</li>
-          <li>Donor prospects</li>
-          <li>Yard-sign requests</li>
-          <li>Event attendees</li>
-          <li>Personal voter conversations</li>
-          <li>Local leaders</li>
-          <li>Community relationships</li>
-          <li>Notes from doors, calls, texts, and meetings</li>
-        </ul>
-        <p>Participating campaigns can add their own contacts while keeping those records separated from other organizations.</p>
-        <p class="emphasis">Private voter contacts are not automatically placed into a shared statewide pool.</p>
-        <p>They can be firewalled and visible only to the campaign or organization that created them.</p>
-        <p class="closing-pair">The statewide enhanced data provides the foundation.<br />Each campaign’s organizing work remains its own.</p>
-        <div class="source-links">
-          <a class="btn btn-primary" href="/platform/">Electd workspace</a>
-          <a class="btn btn-outline" href="/join/">Request information</a>
-        </div>
-      </div>
-    </section>
-
-</BaseLayout>
+<BriefLayout entry={entry} />

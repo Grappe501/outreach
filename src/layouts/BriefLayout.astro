@@ -1,0 +1,30 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  entry: CollectionEntry<'briefs'>;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { title, description, breadcrumb, eyebrow, headline, lede, sectionClass } = entry.data;
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="page-hero">
+    <div class="section-inner">
+      <p class="breadcrumb"><a href="/">Home</a> / {breadcrumb}</p>
+      <p class="brand-lockup">{eyebrow}</p>
+      <h1 transition:name="page-title">{headline}</h1>
+      <p class="hero-lede">{lede}</p>
+    </div>
+  </section>
+
+  <section class={sectionClass}>
+    <div class="section-inner prose-brief">
+      <Content />
+    </div>
+  </section>
+</BaseLayout>

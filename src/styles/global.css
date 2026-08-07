@@ -1,6 +1,8 @@
 @import './tokens.css';
 @import './base.css';
 @import './components/site.css';
+@import './components/page-hero.css';
+@import './components/forms.css';
 @import './components/components.css';
 @import './components/motion.css';
 @import './components/cinema.css';

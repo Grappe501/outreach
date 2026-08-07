@@ -137,6 +137,28 @@ function scoreItem(item: HTMLElement, query: string) {
   return score;
 }
 
+type MockStepData = {
+  id: string;
+  label: string;
+  rail: string;
+  ask: string;
+  count: string;
+  voters: { name: string; channels: string }[];
+  feed: { time: string; text: string }[];
+  note: string;
+};
+
+let paletteLastFocus: HTMLElement | null = null;
+
+function navigateSoft(href: string) {
+  const a = document.createElement('a');
+  a.href = href;
+  a.dataset.astroPrefetch = 'true';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+}
+
 function initPalette() {
   const root = document.querySelector<HTMLElement>('[data-command-palette]');
   if (!root) return;
@@ -149,8 +171,11 @@ function initPalette() {
 
   const items = () =>
     [...list.querySelectorAll<HTMLElement>('[data-palette-item]')].filter(
-      (el) => el.style.display !== 'none',
-    );
+      (el) => el.style.display !== 'none' && el.closest('[data-palette-group]')?.getAttribute('hidden') !== '',
+    ).filter((el) => {
+      const group = el.closest<HTMLElement>('[data-palette-group]');
+      return !group || group.style.display !== 'none';
+    });
 
   const setActive = (index: number) => {
     const visible = items();
@@ -164,22 +189,41 @@ function initPalette() {
 
   const filter = () => {
     const q = input.value.trim();
-    const all = [...list.querySelectorAll<HTMLElement>('[data-palette-item]')];
-    all.forEach((el) => {
-      const s = scoreItem(el, q);
-      el.style.display = s < 0 ? 'none' : '';
-      el.dataset.score = String(s);
+    list.querySelectorAll<HTMLElement>('[data-palette-group]').forEach((group) => {
+      const groupItems = [...group.querySelectorAll<HTMLElement>('[data-palette-item]')];
+      let visibleCount = 0;
+      groupItems.forEach((el) => {
+        const s = scoreItem(el, q);
+        el.style.display = s < 0 ? 'none' : '';
+        el.dataset.score = String(s);
+        if (s >= 0) visibleCount += 1;
+      });
+      group.style.display = visibleCount ? '' : 'none';
     });
-    all
-      .filter((el) => el.style.display !== 'none')
-      .sort((a, b) => Number(b.dataset.score) - Number(a.dataset.score))
-      .forEach((el) => list.appendChild(el));
     setActive(0);
   };
 
+  const getFocusable = () =>
+    [input, ...items()].filter(Boolean) as HTMLElement[];
+
+  const trapFocus = (event: KeyboardEvent) => {
+    if (event.key !== 'Tab' || root.hidden) return;
+    const focusable = getFocusable();
+    if (!focusable.length) return;
+    const first = focusable[0]!;
+    const last = focusable[focusable.length - 1]!;
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  };
+
   const open = () => {
+    paletteLastFocus = document.activeElement as HTMLElement | null;
     root.hidden = false;
-    root.setAttribute('aria-expanded', 'true');
     document.body.classList.add('palette-open');
     input.value = '';
     filter();
@@ -188,16 +232,18 @@ function initPalette() {
 
   const close = () => {
     root.hidden = true;
-    root.setAttribute('aria-expanded', 'false');
     document.body.classList.remove('palette-open');
+    paletteLastFocus?.focus?.();
+    paletteLastFocus = null;
   };
 
   const go = () => {
     const visible = items();
     const target = visible[activeIndex];
     if (!target?.dataset.href) return;
+    const href = target.dataset.href;
     close();
-    window.location.assign(target.dataset.href);
+    navigateSoft(href);
   };
 
   document.querySelectorAll('[data-palette-open]').forEach((btn) => {
@@ -220,10 +266,9 @@ function initPalette() {
       setActive(visible.indexOf(el));
     });
     el.addEventListener('click', () => {
-      if (el.dataset.href) {
-        close();
-        window.location.assign(el.dataset.href);
-      }
+      if (!el.dataset.href) return;
+      close();
+      navigateSoft(el.dataset.href);
     });
   });
 
@@ -240,54 +285,31 @@ function initPalette() {
       const metaK = (event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k';
       if (metaK) {
         event.preventDefault();
-        if (palette.hidden) {
-          document.querySelector<HTMLButtonElement>('[data-palette-open]')?.click();
-        } else {
-          palette.hidden = true;
-          palette.setAttribute('aria-expanded', 'false');
-          document.body.classList.remove('palette-open');
-        }
+        if (palette.hidden) open();
+        else close();
         return;
       }
       if (palette.hidden) return;
-      const listEl = palette.querySelector<HTMLElement>('[data-palette-list]');
-      const visible = listEl
-        ? [...listEl.querySelectorAll<HTMLElement>('[data-palette-item]')].filter(
-            (el) => el.style.display !== 'none',
-          )
-        : [];
+      trapFocus(event);
+      const visible = items();
       const selected = visible.findIndex((el) => el.getAttribute('aria-selected') === 'true');
       if (event.key === 'Escape') {
         event.preventDefault();
-        palette.hidden = true;
-        palette.setAttribute('aria-expanded', 'false');
-        document.body.classList.remove('palette-open');
+        close();
       } else if (event.key === 'ArrowDown' && visible.length) {
         event.preventDefault();
-        const next = (selected + 1) % visible.length;
-        visible.forEach((el, i) => el.setAttribute('aria-selected', i === next ? 'true' : 'false'));
-        visible[next]?.scrollIntoView({ block: 'nearest' });
+        setActive(selected + 1);
       } else if (event.key === 'ArrowUp' && visible.length) {
         event.preventDefault();
-        const next = (selected - 1 + visible.length) % visible.length;
-        visible.forEach((el, i) => el.setAttribute('aria-selected', i === next ? 'true' : 'false'));
-        visible[next]?.scrollIntoView({ block: 'nearest' });
+        setActive(selected - 1);
       } else if (event.key === 'Enter') {
         event.preventDefault();
-        const target = visible[Math.max(selected, 0)];
-        if (target?.dataset.href) {
-          palette.hidden = true;
-          document.body.classList.remove('palette-open');
-          window.location.assign(target.dataset.href);
-        }
+        go();
       }
     });
   }
 
   void (navIndex as PaletteItem[]);
-  void open;
-  void close;
-  void go;
 }
 
 function money(n: number) {
@@ -345,67 +367,83 @@ const mockTimers: number[] = [];
 
 function initProductMock() {
   mockTimers.splice(0).forEach((id) => window.clearInterval(id));
-  if (prefersReducedMotion()) return;
-  const root = document.querySelector('.product-mock');
-  if (!root) return;
-  root.removeAttribute('data-bound');
+  const root = document.querySelector<HTMLElement>('[data-product-mock]');
+  if (!root || root.getAttribute('data-bound') === 'true') return;
   root.setAttribute('data-bound', 'true');
 
-  const queries = [
-    'Show persuadable Democrats in Pulaski with mobile numbers…',
-    'Build a weekend canvass turf in Ward 2 with high turnout scores…',
-    'Queue an SMS wave to undecideds who opened last email…',
-    'List donors who haven’t been thanked in 30 days…',
-  ];
-  const activities = [
-    ['now', 'SMS wave queued · 2,400'],
-    ['1m', 'Ask Electd refreshed · Pulaski'],
-    ['3m', 'Canvass turf synced · Ward 2'],
-    ['7m', 'Email open rate · 41%'],
-    ['11m', 'New volunteer shift · 8'],
-    ['18m', 'Voice bank complete · 312 dials'],
-  ];
+  const stepsEl = root.querySelector<HTMLScriptElement>('[data-mock-steps]');
+  if (!stepsEl?.textContent) return;
+  const steps = JSON.parse(stepsEl.textContent) as MockStepData[];
 
   const queryEl = root.querySelector<HTMLElement>('[data-ask-query]');
   const countEl = root.querySelector<HTMLElement>('[data-voter-count]');
+  const voterList = root.querySelector<HTMLElement>('[data-voter-list]');
   const feed = root.querySelector<HTMLElement>('[data-activity-feed]');
-  let q = 0;
-  let a = 0;
-  let count = 12480;
+  const noteEl = root.querySelector<HTMLElement>('[data-mock-note]');
+  const panel = root.querySelector<HTMLElement>('#mock-panel');
+  const tabs = [...root.querySelectorAll<HTMLButtonElement>('[data-mock-step]')];
 
-  if (queryEl) {
-    queryEl.style.transition = 'opacity 220ms ease';
+  let index = 0;
+
+  const render = (next: number) => {
+    index = (next + steps.length) % steps.length;
+    const step = steps[index];
+    if (!step) return;
+
+    tabs.forEach((tab, i) => {
+      const on = i === index;
+      tab.classList.toggle('is-active', on);
+      tab.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+
+    root.querySelectorAll<HTMLElement>('[data-mock-rail]').forEach((rail) => {
+      rail.classList.toggle('is-active', rail.dataset.mockRail === step.rail);
+    });
+
+    if (panel) panel.setAttribute('aria-labelledby', `mock-tab-${step.id}`);
+    if (queryEl) queryEl.textContent = step.ask;
+    if (countEl) countEl.textContent = step.count;
+    if (noteEl) noteEl.textContent = step.note;
+    if (voterList) {
+      voterList.innerHTML = step.voters
+        .map(
+          (v) =>
+            `<li><span class="dot"></span><span>${v.name}</span><em>${v.channels}</em></li>`,
+        )
+        .join('');
+    }
+    if (feed) {
+      feed.innerHTML = step.feed
+        .map((f) => `<li><time>${f.time}</time> ${f.text}</li>`)
+        .join('');
+    }
+  };
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      render(Number(tab.dataset.stepIndex ?? 0));
+    });
+  });
+
+  if (!prefersReducedMotion()) {
+    mockTimers.push(window.setInterval(() => render(index + 1), 6500));
   }
+}
 
-  mockTimers.push(
-    window.setInterval(() => {
-      q = (q + 1) % queries.length;
-      if (queryEl) {
-        queryEl.style.opacity = '0';
-        window.setTimeout(() => {
-          queryEl.textContent = queries[q] ?? queries[0] ?? '';
-          queryEl.style.opacity = '1';
-        }, 220);
-      }
-      count += Math.floor(Math.random() * 40) + 12;
-      if (countEl) countEl.textContent = count.toLocaleString('en-US');
-    }, 4200),
-  );
-
-  mockTimers.push(
-    window.setInterval(() => {
-      if (!feed) return;
-      a = (a + 1) % activities.length;
-      const item = activities[a];
-      if (!item) return;
-      const li = document.createElement('li');
-      li.innerHTML = `<time>${item[0]}</time> ${item[1]}`;
-      feed.prepend(li);
-      while (feed.children.length > 4) {
-        feed.lastElementChild?.remove();
-      }
-    }, 3200),
-  );
+function initTour() {
+  const root = document.querySelector<HTMLElement>('[data-platform-tour]');
+  if (!root || root.getAttribute('data-bound') === 'true') return;
+  root.setAttribute('data-bound', 'true');
+  const chapters = [...root.querySelectorAll<HTMLButtonElement>('[data-tour-chapter]')];
+  chapters.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      chapters.forEach((c) => {
+        const on = c === btn;
+        c.classList.toggle('is-active', on);
+        c.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+    });
+  });
 }
 
 function boot() {
@@ -415,6 +453,7 @@ function boot() {
   initPalette();
   initRateCalc();
   initProductMock();
+  initTour();
 }
 
 boot();

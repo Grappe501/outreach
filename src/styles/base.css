@@ -129,8 +129,13 @@ li {
   font-weight: 700;
 }
 
-.skip-link:focus {
-  top: 1rem;
+.prose-brief :is(h2, h3) {
+  margin-top: 0;
+}
+
+.prose-brief a.btn,
+.prose-brief a[href^="/join"] {
+  font-weight: 700;
 }
 
 /* Header */

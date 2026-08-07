@@ -1,5 +1,7 @@
 ---
 import { navIndex } from '@/data/nav-index';
+
+const groups = [...new Set(navIndex.map((item) => item.group))];
 ---
 
 <div
@@ -9,11 +11,10 @@ import { navIndex } from '@/data/nav-index';
   hidden
   role="dialog"
   aria-modal="true"
-  aria-expanded="false"
   aria-labelledby="cmdk-title"
 >
-  <div class="cmdk-backdrop" data-palette-close></div>
-  <div class="cmdk-panel">
+  <div class="cmdk-backdrop" data-palette-close tabindex="-1"></div>
+  <div class="cmdk-panel" role="document">
     <h2 id="cmdk-title" class="sr-only">Site search</h2>
     <label class="cmdk-label" for="cmdk-input">Jump to</label>
     <input
@@ -26,17 +27,34 @@ import { navIndex } from '@/data/nav-index';
       spellcheck="false"
       data-palette-input
     />
-    <ul class="cmdk-list" role="listbox" data-palette-list>
+    <div class="cmdk-scroll" data-palette-list>
       {
-        navIndex.map((item, i) => (
-          <li role="option" data-palette-item data-href={item.href} data-title={item.title} data-keywords={item.keywords.join(' ')} data-group={item.group} aria-selected={i === 0 ? 'true' : 'false'}>
-            <span class="cmdk-item-title">{item.title}</span>
-            <span class="cmdk-item-desc">{item.description}</span>
-            <span class="cmdk-item-group">{item.group}</span>
-          </li>
+        groups.map((group) => (
+          <div class="cmdk-group" data-palette-group={group}>
+            <p class="cmdk-group-label">{group}</p>
+            <ul role="listbox" aria-label={group}>
+              {navIndex
+                .filter((item) => item.group === group)
+                .map((item) => (
+                  <li
+                    role="option"
+                    data-palette-item
+                    data-href={item.href}
+                    data-title={item.title}
+                    data-keywords={item.keywords.join(' ')}
+                    data-group={item.group}
+                    aria-selected="false"
+                    tabindex="-1"
+                  >
+                    <span class="cmdk-item-title">{item.title}</span>
+                    <span class="cmdk-item-desc">{item.description}</span>
+                  </li>
+                ))}
+            </ul>
+          </div>
         ))
       }
-    </ul>
+    </div>
     <p class="cmdk-hint">
       <kbd>↑</kbd><kbd>↓</kbd> navigate · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close
     </p>

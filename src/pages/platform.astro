@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import PartnerImage from '@/components/PartnerImage.astro';
+import PlatformTour from '@/components/PlatformTour.astro';
 import { electdOfferSchema } from '@/lib/schema';
 ---
 
@@ -19,23 +20,7 @@ import { electdOfferSchema } from '@/lib/schema';
       </div>
     </section>
 
-    <section class="section section-product">
-      <div class="section-inner">
-        <nav class="page-toc" aria-label="On this page">
-          <strong>On this page</strong>
-          <ol>
-            <li><a href="#subscription">Subscription</a></li>
-            <li><a href="#how">How Electd works</a></li>
-            <li><a href="#capabilities">Strategy to execution</a></li>
-            <li><a href="#usage">Usage rates</a></li>
-          </ol>
-        </nav>
-        <figure class="product-figure">
-          <PartnerImage variant="electd-preview" loading="eager" class="product-shot" />
-          <figcaption>Product imagery from <a href="https://www.electd.io/" rel="noopener noreferrer" target="_blank">Electd</a>.</figcaption>
-        </figure>
-      </div>
-    </section>
+    <PlatformTour />
 
     <section id="subscription" class="section">
       <div class="section-inner">

@@ -1,7 +1,10 @@
 ---
+import { mockSteps } from '@/data/tour';
+
+const first = mockSteps[0]!;
 ---
 
-<figure class="product-mock" aria-label="Electd-style campaign workspace preview">
+<figure class="product-mock" data-product-mock aria-label="Electd-style Arkansas campaign workflow preview">
   <div class="product-mock__chrome">
     <div class="product-mock__traffic" aria-hidden="true">
       <span></span><span></span><span></span>
@@ -9,50 +12,57 @@
     <p class="product-mock__title">Arkansas HQ · Electd workspace</p>
   </div>
 
-  <div class="product-mock__body">
+  <div class="product-mock__steps" role="tablist" aria-label="Workflow steps">
+    {
+      mockSteps.map((step, i) => (
+        <button
+          type="button"
+          class:list={['product-mock__step', { 'is-active': i === 0 }]}
+          role="tab"
+          id={`mock-tab-${step.id}`}
+          aria-selected={i === 0 ? 'true' : 'false'}
+          aria-controls="mock-panel"
+          data-mock-step={step.id}
+          data-step-index={i}
+        >
+          <span class="product-mock__step-num">{String(i + 1).padStart(2, '0')}</span>
+          {step.label}
+        </button>
+      ))
+    }
+  </div>
+
+  <div class="product-mock__body" id="mock-panel" role="tabpanel" aria-labelledby={`mock-tab-${first.id}`}>
     <aside class="product-mock__rail" aria-hidden="true">
-      <span class="is-active">Lists</span>
-      <span>CRM</span>
-      <span>Outreach</span>
-      <span>Canvass</span>
-      <span>Reports</span>
+      {['Lists', 'CRM', 'Outreach', 'Canvass', 'Reports'].map((item) => (
+        <span class:list={{ 'is-active': item === first.rail }} data-mock-rail={item}>
+          {item}
+        </span>
+      ))}
     </aside>
 
     <div class="product-mock__main">
       <div class="product-mock__ask">
         <span class="product-mock__ask-label">Ask Electd</span>
-        <p class="product-mock__ask-query" data-ask-query>
-          Show persuadable Democrats in Pulaski with mobile numbers…
-        </p>
+        <p class="product-mock__ask-query" data-ask-query>{first.ask}</p>
       </div>
 
       <div class="product-mock__panels">
         <div class="product-mock__voters">
           <div class="product-mock__panel-head">
-            <strong>Target universe</strong>
-            <span data-voter-count>12,480</span>
+            <strong data-mock-panel-title>Target universe</strong>
+            <span data-voter-count>{first.count}</span>
           </div>
           <ul class="product-mock__voter-list" data-voter-list>
-            <li>
-              <span class="dot"></span>
-              <span>Jordan M. · HD-32</span>
-              <em>Mobile · Email</em>
-            </li>
-            <li>
-              <span class="dot"></span>
-              <span>Alex R. · Pulaski</span>
-              <em>Mobile</em>
-            </li>
-            <li>
-              <span class="dot"></span>
-              <span>Casey T. · LR</span>
-              <em>Email · Mail</em>
-            </li>
-            <li>
-              <span class="dot"></span>
-              <span>Morgan L. · NLR</span>
-              <em>Mobile · Voice</em>
-            </li>
+            {
+              first.voters.map((v) => (
+                <li>
+                  <span class="dot" />
+                  <span>{v.name}</span>
+                  <em>{v.channels}</em>
+                </li>
+              ))
+            }
           </ul>
         </div>
 
@@ -62,17 +72,23 @@
             <span>Live</span>
           </div>
           <ul class="product-mock__feed-list" data-activity-feed>
-            <li><time>now</time> SMS wave queued · 2,400</li>
-            <li><time>2m</time> Canvass turf synced · Ward 2</li>
-            <li><time>6m</time> Email open rate · 41%</li>
-            <li><time>12m</time> New volunteer shift · 8</li>
+            {
+              first.feed.map((f) => (
+                <li>
+                  <time>{f.time}</time> {f.text}
+                </li>
+              ))
+            }
           </ul>
         </div>
       </div>
     </div>
   </div>
 
+  <p class="product-mock__note" data-mock-note>{first.note}</p>
   <figcaption class="product-mock__caption">
-    Illustrative Electd-style workspace for Arkansas campaigns — not a live login.
+    Illustrative Electd-style workflow for Arkansas campaigns — not a live login. Step through Ask → List → SMS → Canvass.
   </figcaption>
+
+  <script is:inline type="application/json" data-mock-steps set:html={JSON.stringify(mockSteps)} />
 </figure>

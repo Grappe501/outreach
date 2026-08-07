@@ -6,6 +6,7 @@ import MetricsStrip from '@/components/MetricsStrip.astro';
 import RateCalculator from '@/components/RateCalculator.astro';
 import FundingMeter from '@/components/FundingMeter.astro';
 import ComparisonMatrix from '@/components/ComparisonMatrix.astro';
+import PlatformTour from '@/components/PlatformTour.astro';
 ---
 
 <BaseLayout
@@ -22,13 +23,7 @@ import ComparisonMatrix from '@/components/ComparisonMatrix.astro';
       <div class="hero-copy">
         <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Statewide campaign infrastructure</p>
         <div class="hero-brand-row">
-          <img
-            class="hero-map"
-            src="/assets/arkansas-logo.svg"
-            width="56"
-            height="50"
-            alt=""
-          />
+          <img class="hero-map" src="/assets/arkansas-logo.svg" width="56" height="50" alt="" />
           <p class="brand-lockup">Arkansas Campaign Data Cooperative</p>
         </div>
         <h1 transition:name="page-title">Better Data.<br />Better Organizing.<br />Better Campaigns.</h1>
@@ -38,9 +33,14 @@ import ComparisonMatrix from '@/components/ComparisonMatrix.astro';
         </p>
         <div class="cta-row home-hero-actions">
           <a class="btn btn-primary" href="/join/">Request a briefing</a>
-          <a class="btn btn-secondary" href="#rate-calculator">Estimate outreach cost</a>
-          <a class="btn btn-ghost" href="#compare">Compare options</a>
         </div>
+        <p class="hero-secondary-links">
+          <a href="#rate-calculator">Estimate outreach cost</a>
+          <span aria-hidden="true">·</span>
+          <a href="#compare">Compare options</a>
+          <span aria-hidden="true">·</span>
+          <a href="#platform-tour">Platform tour</a>
+        </p>
       </div>
       <div class="hero-stage">
         <ProductMockup />
@@ -49,6 +49,8 @@ import ComparisonMatrix from '@/components/ComparisonMatrix.astro';
   </section>
 
   <MetricsStrip />
+
+  <PlatformTour />
 
   <RateCalculator />
 
