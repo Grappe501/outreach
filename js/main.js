@@ -9,6 +9,15 @@
     year.textContent = String(new Date().getFullYear());
   }
 
+  const setIntent = (intent) => {
+    if (!intent) return;
+    const radio = document.querySelector(`input[name="intent"][value="${intent}"]`);
+    if (radio) radio.checked = true;
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  setIntent(params.get("intent"));
+
   const onScroll = () => {
     if (!header) return;
     header.classList.toggle("is-scrolled", window.scrollY > 12);
@@ -33,13 +42,12 @@
   document.querySelectorAll("[data-intent]").forEach((btn) => {
     btn.addEventListener("click", () => {
       const intent = btn.getAttribute("data-intent");
-      const radio = document.querySelector(`input[name="intent"][value="${intent}"]`);
-      if (radio) radio.checked = true;
+      setIntent(intent);
     });
   });
 
   const revealTargets = document.querySelectorAll(
-    ".section h2, .callout, .pull-quote, .tier, .math-block, .price-hero, .join-form, .better-list li"
+    ".section h2, .callout, .pull-quote, .tier, .math-block, .price-hero, .join-form, .better-list li, .offer-item, .rate-table-wrap, .coop-aside"
   );
   revealTargets.forEach((el) => el.classList.add("reveal"));
 

@@ -784,6 +784,205 @@ li {
   to { transform: translate3d(-12px, -18px, 0); }
 }
 
+/* Subpage hero */
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(115deg, rgba(10, 40, 35, 0.94) 0%, rgba(15, 61, 54, 0.88) 50%, rgba(26, 70, 58, 0.75) 100%),
+    #0a2823;
+  color: #f4f8f6;
+  padding: clamp(3.5rem, 9vw, 5.5rem) 1.25rem clamp(3rem, 7vw, 4.5rem);
+}
+
+.page-hero .brand-lockup {
+  color: #d8ebe5;
+}
+
+.page-hero h1 {
+  color: #fff;
+  max-width: 16ch;
+  font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+}
+
+.page-hero .hero-lede {
+  max-width: 38rem;
+  color: rgba(244, 248, 246, 0.9);
+  margin-bottom: 1.5rem;
+}
+
+.page-hero .btn-secondary,
+.page-hero .btn-ghost {
+  color: #fff;
+}
+
+.breadcrumb {
+  font-size: 0.9rem;
+  margin: 0 0 1rem;
+  color: rgba(244, 248, 246, 0.65);
+}
+
+.breadcrumb a {
+  color: rgba(244, 248, 246, 0.85);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: #fff;
+}
+
+/* Two-offer strip */
+.offer-strip {
+  background: var(--paper-deep);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.offer-item {
+  padding: 0.5rem 0;
+}
+
+.offer-item h3 {
+  margin-top: 0;
+  color: var(--teal);
+  font-size: clamp(1.35rem, 2.5vw, 1.7rem);
+}
+
+.offer-price {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--copper);
+  margin: 0 0 0.75rem;
+}
+
+.offer-item p {
+  color: var(--ink-soft);
+}
+
+.offer-item .btn {
+  margin-top: 0.5rem;
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+.btn-outline:hover {
+  background: var(--teal);
+  color: #fff;
+}
+
+/* Rate card */
+.rate-disclaimer {
+  margin: 0 0 1.75rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  font-size: 1rem;
+  color: var(--ink-soft);
+}
+
+.rate-disclaimer strong {
+  color: var(--teal);
+}
+
+.rate-table-wrap {
+  overflow-x: auto;
+  margin: 1.5rem 0 2rem;
+}
+
+.rate-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.05rem;
+  min-width: 36rem;
+}
+
+.rate-table th,
+.rate-table td {
+  text-align: left;
+  padding: 0.95rem 1rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.rate-table thead th {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--teal);
+  border-bottom: 2px solid var(--teal);
+}
+
+.rate-table tbody th {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.rate-table .rate-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--copper);
+  white-space: nowrap;
+}
+
+.rate-table .rate-na {
+  color: var(--ink-soft);
+}
+
+.rate-note {
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+}
+
+.coop-aside {
+  margin-top: 2.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--line);
+}
+
+.coop-aside h3 {
+  margin-top: 0;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 1.25rem;
+  margin: 1rem 0 0;
+}
+
+.footer-nav a {
+  color: rgba(228, 239, 235, 0.85);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.footer-nav a:hover {
+  color: #fff;
+}
+
+.data-path {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.data-path h3 {
+  margin-top: 0;
+}
+
 @media (max-width: 860px) {
   .nav-toggle {
     display: flex;
@@ -819,7 +1018,8 @@ li {
 
   .feature-list.two-col,
   .tier-grid,
-  .form-grid {
+  .form-grid,
+  .offer-grid {
     grid-template-columns: 1fr;
   }
 

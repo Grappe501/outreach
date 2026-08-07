@@ -18,7 +18,7 @@
 
   <header class="site-header" data-header>
     <div class="header-inner">
-      <a class="logo" href="#top">
+      <a class="logo" href="index.html#top">
         <span class="logo-mark" aria-hidden="true"></span>
         <span class="logo-text">Arkansas Campaign Data Cooperative</span>
       </a>
@@ -27,10 +27,10 @@
         <span></span><span></span>
       </button>
       <nav id="site-nav" class="site-nav" data-nav>
-        <a href="#problem">The Problem</a>
-        <a href="#foundation">The Data</a>
-        <a href="#platform">Platform</a>
-        <a href="#pricing">Pricing</a>
+        <a href="platform.html">Platform</a>
+        <a href="managed.html">Managed</a>
+        <a href="pricing.html">Rates</a>
+        <a href="#pricing">Cooperative</a>
         <a href="#join" class="nav-cta">Join</a>
       </nav>
     </div>
@@ -63,6 +63,28 @@
       </div>
     </section>
 
+    <section class="section offer-strip" id="offers">
+      <div class="section-inner">
+        <h2>Two ways to buy communications</h2>
+        <p class="lead">Start with the platform, add managed service when you need capacity, and treat enhanced statewide data as an optional cooperative upgrade.</p>
+        <div class="offer-grid">
+          <article class="offer-item">
+            <h3>Raw / Platform</h3>
+            <p class="offer-price">$125 / month</p>
+            <p>No contract. SOS voter data plus your campaign contacts. Self-serve email, text, and tools—usage billed separately at raw sample rates.</p>
+            <a class="btn btn-outline" href="platform.html">Platform details</a>
+          </article>
+          <article class="offer-item">
+            <h3>Managed</h3>
+            <p class="offer-price">From managed floor rates</p>
+            <p>We handle list prep, sends, and delivery. Full-service email at $0.015/contact, SMS at $0.028/text, and mail from $0.35 per 6×9 piece.</p>
+            <a class="btn btn-outline" href="managed.html">Managed details</a>
+          </article>
+        </div>
+        <p style="margin-top:1.5rem"><a href="pricing.html">Compare the full sample rate card →</a></p>
+      </div>
+    </section>
+
     <section id="problem" class="section section-problem">
       <div class="section-inner">
         <h2>Arkansas campaigns cannot organize effectively with incomplete or outdated voter information.</h2>
@@ -82,9 +104,9 @@
         </ul>
 
         <div class="callout">
-          <p>We already have access to important Arkansas voter information, including current voter-registration information obtained through the Secretary of State, along with records developed through multiple voter and ballot-initiative efforts.</p>
-          <p class="emphasis">That gives us a strong foundation.</p>
-          <p class="emphasis-strong">But it is still not enough.</p>
+          <p>Platform subscribers already work from important Arkansas voter information—current voter-registration records from the Secretary of State—plus contacts and notes the campaign provides.</p>
+          <p class="emphasis">That gives every campaign a usable foundation without joining the Data Cooperative.</p>
+          <p class="emphasis-strong">For verified emails, mobiles, and enhanced addresses at scale, the cooperative file is still the upgrade.</p>
         </div>
       </div>
     </section>
@@ -143,14 +165,15 @@
         <p>Participating campaigns can add their own contacts and voter information to the platform while keeping those records separated from other campaigns and organizations.</p>
         <p class="emphasis">A campaign’s private voter contacts are not automatically placed into a shared statewide pool.</p>
         <p>They can be firewalled and visible only to the campaign or organization that created them.</p>
-        <p class="closing-pair">The statewide enhanced data provides the foundation.<br />Each campaign’s organizing work remains its own.</p>
+        <p class="closing-pair">The statewide enhanced data can strengthen the foundation.<br />Each campaign’s organizing work remains its own.</p>
       </div>
     </section>
 
     <section id="platform" class="section section-platform">
       <div class="section-inner">
         <h2>One system for voter communication</h2>
-        <p class="lead">Campaigns that want more than the data can also use the communications platform for:</p>
+        <p class="lead">The communications platform is <strong>$125 per month</strong>—no long-term contract. It includes Secretary of State voter-registration data and the contacts your campaign provides. The Data Cooperative enhanced file is a separate, optional purchase.</p>
+        <p>Use the platform for:</p>
         <ul class="feature-list two-col">
           <li>Email</li>
           <li>Text messaging</li>
@@ -171,18 +194,18 @@
             <li>No long-term contract</li>
             <li>No major upfront software cost</li>
             <li>Cancel when the campaign no longer needs it</li>
-            <li>Communication costs are charged based on actual use</li>
+            <li>Email, text, and mail usage charged based on actual sends</li>
           </ul>
-          <p>Campaigns pay only for the email, texting, calling, or direct-mail activity they choose to conduct.</p>
+          <p>Campaigns pay only for the communication activity they choose to conduct. Prefer full-service execution? See <a href="managed.html">Managed services</a>. <a href="platform.html">Platform details →</a> · <a href="pricing.html">Sample rates →</a></p>
         </div>
       </div>
     </section>
 
     <section id="pricing" class="section section-pricing">
       <div class="section-inner">
-        <h2>Cooperative data pricing</h2>
-        <p class="lead">The statewide enhanced data file costs approximately <strong>$24,000</strong>.</p>
-        <p>Rather than requiring one campaign or organization to absorb that entire cost, we are building a cooperative purchasing model that spreads the cost across participating campaigns and county organizations.</p>
+        <h2>Optional: Cooperative data pricing</h2>
+        <p class="lead">The statewide enhanced data file costs approximately <strong>$24,000</strong>. This is separate from the $125 monthly platform subscription.</p>
+        <p>Without cooperative participation, platform users work with SOS registration data plus records the campaign provides. Rather than requiring one organization to absorb the full enhanced-file cost, we are building a cooperative purchasing model that spreads acquisition across participating campaigns and county organizations.</p>
 
         <div class="tier-grid">
           <article class="tier">
@@ -316,6 +339,14 @@
               <span>Request Information</span>
             </label>
             <label class="chip">
+              <input type="radio" name="intent" value="platform" />
+              <span>Platform ($125/mo)</span>
+            </label>
+            <label class="chip">
+              <input type="radio" name="intent" value="managed" />
+              <span>Managed Services</span>
+            </label>
+            <label class="chip">
               <input type="radio" name="intent" value="reserve" />
               <span>Reserve Cooperative Pricing</span>
             </label>
@@ -359,12 +390,12 @@
             </label>
             <label class="full">
               <span>Message (optional)</span>
-              <textarea name="message" rows="4" placeholder="Tell us what you need—data only, platform access, VAN matching, or a demo."></textarea>
+              <textarea name="message" rows="4" placeholder="Tell us what you need—platform access, managed email/text/mail, cooperative data, or a demo."></textarea>
             </label>
           </div>
 
           <button class="btn btn-primary btn-wide" type="submit">Submit</button>
-          <p class="form-note">Founding cooperative pricing is conditional on reaching the statewide funding threshold.</p>
+          <p class="form-note">Platform is $125/month with no contract. Channel rates are samples until finalized. Cooperative data pricing is conditional on reaching the statewide funding threshold.</p>
         </form>
       </div>
     </section>
@@ -374,6 +405,13 @@
     <div class="footer-inner">
       <p class="footer-brand">Arkansas Campaign Data Cooperative</p>
       <p>Better Data. Better Organizing. Better Campaigns.</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="platform.html">Platform</a>
+        <a href="managed.html">Managed</a>
+        <a href="pricing.html">Rates</a>
+        <a href="#pricing">Cooperative</a>
+        <a href="#join">Join</a>
+      </nav>
       <p class="footer-meta">&copy; <span data-year></span> Arkansas Campaign Data Cooperative</p>
     </div>
   </footer>
