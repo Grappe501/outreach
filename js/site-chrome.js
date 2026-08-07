@@ -21,18 +21,7 @@
 
   const isActive = (item) => item.keys.includes(path);
 
-  const logoMark = `
-<svg class="logo-ar" viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M42 48 L78 38 L118 34 L148 36 L168 40 L178 48 L182 62 L186 88 L188 118 L186 142 L178 158 L162 168 L138 174 L108 178 L82 174 L58 164 L46 148 L40 122 L36 92 L38 68 Z" fill="none" stroke="currentColor" stroke-width="10" stroke-linejoin="round"/>
-  <circle cx="108" cy="112" r="8" fill="#c45312"/>
-  <circle cx="68" cy="58" r="5.5" fill="currentColor"/>
-  <circle cx="52" cy="78" r="5" fill="currentColor"/>
-  <circle cx="148" cy="72" r="5.5" fill="currentColor"/>
-  <circle cx="118" cy="138" r="5" fill="currentColor"/>
-  <circle cx="88" cy="118" r="5" fill="currentColor"/>
-  <circle cx="58" cy="158" r="5" fill="currentColor"/>
-  <circle cx="98" cy="158" r="5" fill="currentColor"/>
-</svg>`;
+  const logoMark = `<img class="logo-ar" src="assets/arkansas-logo.svg" width="40" height="35" alt="" />`;
 
   const headerEl = document.querySelector("[data-site-header]");
   if (headerEl) {

@@ -192,14 +192,15 @@ li {
 }
 
 .logo-ar {
-  width: 2.15rem;
-  height: 1.95rem;
+  width: 2.35rem;
+  height: 2.05rem;
   flex-shrink: 0;
-  color: var(--teal);
+  object-fit: contain;
+  display: block;
 }
 
 .logo:hover .logo-ar {
-  color: var(--teal-mid);
+  filter: brightness(1.08);
 }
 
 .hero-brand {
@@ -211,19 +212,10 @@ li {
 }
 
 .hero-map {
-  width: min(100%, 11rem);
+  width: min(100%, 14rem);
   height: auto;
-  color: #d7ebe4;
   filter: drop-shadow(0 12px 40px rgba(0, 0, 0, 0.35));
   animation: floatMap 10s ease-in-out infinite alternate;
-}
-
-.hero-map .ar-outline {
-  stroke-width: 2.4;
-}
-
-.hero-map .ar-pins circle:first-child {
-  animation: pinPulse 2.8s ease-in-out infinite;
 }
 
 .eyebrow {
